@@ -1,6 +1,6 @@
 <template>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" >
-<g id="shose-layer">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="550 87 1000 900" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
+<g class="shose-layer">
 	<g>
 		<path @click="changecolor" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
 			c-3.1,1.5-28.5,11.3-27.3,23.5c1.2,12.2-0.4,19.6,10.3,23.4c0,0,2.9,4.7,24.5-6.9c0,0,3.2-2.8,4.5,1.3c1.3,4.1,5.8,13,9.5,13.5
@@ -124,10 +124,8 @@ export default {
 </script>
 
 <style lang="scss">
-   img{
-       position:absolute;
-       left:0;
+   .svg{
+
    }
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 
 </style>
