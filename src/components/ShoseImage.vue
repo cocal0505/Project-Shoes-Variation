@@ -2,7 +2,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="550 87 1000 900" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
-		<path @click="changecolor" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
+		<path :style="{fill: color}"  @click="changecolor" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
 			c-3.1,1.5-28.5,11.3-27.3,23.5c1.2,12.2-0.4,19.6,10.3,23.4c0,0,2.9,4.7,24.5-6.9c0,0,3.2-2.8,4.5,1.3c1.3,4.1,5.8,13,9.5,13.5
 			c3.7,0.5,16.1,0,26.6-3.4c10.5-3.4,34.5-10.8,67.8-12.6c33.3-1.9,55.1-0.7,55.1-0.7l1.8-0.6l8.5,13.1c41.3,59.1,91.9,147,91.9,147
 			c28.9,70.2-26.9,86-26.9,86C956.3,827.8,891.3,816,891.3,816s-71.5-3.3-122.7-65.6c0,0-38.1-35.4-42-66.3
@@ -110,22 +110,42 @@
 	</g>
 </g>
 </svg>
+
+
 </template>
 
 <script>
 export default {
+
+	data(){
+		return{
+			status:false,
+			color:""
+		}
+	},
     methods:{
         changecolor(){
-            const color = document.querySelector('.st2')
-            color.style.fill = "#FFFFFF"
+			this.status = !this.status
+			const status = this.status
+			console.log(status)
+			this.color = this.colorstatus
+			// const st2 = document.querySelector('.st2')
+			// st2.style.fill = 
+			// this.$store.dispatch('Picking/status',status)
         }
-    }
+    },
+	computed:{
+		colorstatus(){
+			return this.$store.state.Picking.color
+		}
+	}
+	
 }
 </script>
 
 <style lang="scss">
    .svg{
-
+	
    }
 
 </style>
