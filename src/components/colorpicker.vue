@@ -1,5 +1,5 @@
 <template>
-<div :style="{background: color}">
+
    <ColorPicker
       theme="light"
       :color="color"
@@ -9,9 +9,6 @@
       @changeColor="changeColor"
       @openSucker="openSucker"
     />
-
-</div>
-  
 
    
 </template>
@@ -27,23 +24,27 @@ export default {
   data() {
       return {
         color: '#59c7f9',
-        rgbcolor:"",
         suckerCanvas: null,
         suckerArea: [],
         isSucking: false,
+        colorsDefault : []
       }
     },
     methods: {
       changeColor(color) {
-        const { r, g, b ,a} = color.rgba
-        // const hex = color.hex
-        this.color = `rgba(${r}, ${g}, ${b}, ${a}})`
-        this.rgbcolor = `rgba(${r}, ${g}, ${b}, ${a}})`
-        // const rgb = this.color
+        const { r, g, b } = color.rgba
+        this.color = `rgba(${r}, ${g}, ${b}})`
+        const rgb = this.color
         // this.$store.dispatch('Picking/color',{
         //   rgbcolor: rgb,
         //   hexcolor: hex 
         // })
+         this.colorsDefault = color.hex
+        const hexarray  =this.colorsDefault
+          this.$store.dispatch('Picking/color',{
+          rgbcolor: rgb,
+          hexcolor: hexarray
+        })
       },
       openSucker(isOpen) {
         if (isOpen) {
@@ -61,8 +62,5 @@ export default {
 
 
 <style lang="scss">
-  .box{
-    width:100px;
-    height:100px;
-  }
+
 </style>

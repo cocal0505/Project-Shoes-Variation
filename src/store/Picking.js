@@ -3,32 +3,72 @@ import { parseQuery } from "vue-router"
 export default {
     namespaced: true,
     state: () =>({
-        color :""
+        color :[],
+        colorRGB  : "",
+        status : false,
+        status2: false,
+        rgbArray : [],
+        finalRgbArray : []
     }),
     mutations:{
         colorstatus(state,payload){
-           state.color = payload
-           console.log(state.color)
+        
+        state.color.unshift(payload)
+      
+     
         },
-        // domelement(state,payload){
-        //     payload.style.fill = state.color
-        // }
+
+        status(state,payload){
+          state.status = payload
+          
+        },
+        statusdouble(state,payload){
+            if(payload === false){
+                state.status2 = true
+                // console.log("second",state.status2)
+            }else{
+                state.status2 =false
+            }
+        },
+        colorRGB(state,payload){
+            state.colorRGB = payload
+            
+        },
+        RGBarray(state,payload){
+          
+           state.rgbArray.push(payload)
+          console.log(payload)
+            state.finalRgbArray = state.rgbArray.filter(i =>{
+                return i  
+            })
+            console.log("final",state.finalRgbArray)
+        }
     },
     actions:{
 
-        // status({commit,state},payload){
-        //     // console.log(payload)
-        //     	// const st2 = document.querySelector('.st2')
-        //         // st2.style.fill = state.color
-        //     // commit('domelement',st2)
-        // },
+        status({commit},payload){
+            
+            commit('status',payload)
+            commit('statusdouble',payload)
+            // console.log("origin",payload)
+        },
         
         color({commit},payload){
-
             const {rgbcolor,hexcolor} =payload
+
+         
+                  commit('colorstatus',hexcolor)
+                commit('colorRGB',rgbcolor)
+
+            // commit('colorstatus',hexcolor)
             // console.log(rgbcolor)
             // console.log(hexcolor)
-            commit('colorstatus',hexcolor)
+            
+        },
+        RGBarray({commit},payload){
+           commit('RGBarray',payload)
+
+            
         }
     },
 }
