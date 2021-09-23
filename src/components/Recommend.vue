@@ -1,51 +1,52 @@
 <template>
     <div class="recommend">
+        <p>{{shoesStatus}}</p>
         <div
-        v-if="shoesStatus">
-         <div 
-            class="box">
-            <p>신발클릭</p>
-         </div>
-        </div>
-        
-        <div
-        v-if="shoesStatus2">
+            v-if="shoesStatus">
             <div class="box">
-                <p>신발해제</p>
+                <p>신발선택</p>
             </div>
         </div>
-    </div>
+        <div
+            v-else>
+            <div class="box">
+                <p>신발선택</p>
+            </div>
+        </div>
+        <div
+            v-if="shoesStatus">
+            <div class="box">
+                <p>신발선택</p>
+            </div>
+        </div>
+         <div
+            v-else>
+            <div class="box">
+                <p>신발선택</p>
+            </div>
+        </div>
 
+    </div>
+   
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            color : "yellow" 
-        }
-    },
-   created(){
-
-   },
    computed:{
        shoesStatus(){
         return this.$store.state.Picking.status
        },
-       shoesStatus2(){
-           return this.$store.state.Picking.status2
-       }
    }
 }
 </script>
 
 <style scoped lang="scss">
-    .recommend{
-        height:450px;
-        position: relative;
-    }
+
+
     .box{
+        
         position:absolute;
+        left:0px;
         opacity: 1;  
         width:100px;
         height:100px;
@@ -58,8 +59,7 @@ export default {
         animation : myframes 1.1s ease-in-out forwards alternate
     }
    
-      p{
-                   
+      p{     
             font-size:15px;
             color:white;
         }
@@ -78,5 +78,11 @@ export default {
                left:30px;
         }
     }
+
+    .recommend{
+        height:450px;
+ 
+    }
+    
 
 </style>

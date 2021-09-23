@@ -1,6 +1,6 @@
 <template>
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="550 87 1000 900" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
 		<path  :style="{fill:color2}"	 @click="changecolorst2" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
@@ -112,14 +112,20 @@
 			c0,0,5.2-5.2,6.6-13.1C1090.2,256.9,1090.8,255.6,1090.8,256.3z"/>
 	</g>
 </g>
-</svg>
 
+</svg>
+<div class="canvas">Canvas</div>
+<div class="inform">
+	<p class="final-text">need new color ideas?</p>
+	<button @click="submitfinal" class="final">
+		<h1>Bring Color palette</h1>
+	</button>
+</div>
 
 </template>
 
 <script>
 export default {
-
 	data(){
 		return{
 			statusSt1:false,
@@ -450,6 +456,21 @@ export default {
 			this.$store.dispatch('Picking/status',status10)
 			const rgbcolor10 = this.colorRGB10
 			this.$store.dispatch('Picking/RGBarray', rgbcolor10)
+		},
+		submitfinal(){
+			this.$store.dispatch('Picking/finalRGBArray',{
+				st1Rgb : this.colorRGB1,
+				st2Rgb : this.colorRGB2,
+				st3Rgb : this.colorRGB3,
+				st4Rgb : this.colorRGB4,
+				st5Rgb : this.colorRGB5,
+				st6Rgb : this.colorRGB6,
+				st7Rgb : this.colorRGB7,
+				st8Rgb : this.colorRGB8,
+				st9Rgb : this.colorRGB9,
+				st10Rgb : this.colorRGB10,
+		
+			})
 		}
 		
     },
@@ -463,17 +484,70 @@ export default {
 	
 	},
 	
+	
 
 }
 </script>
 
 <style lang="scss">
    .svg{
-	   fill:white;
-	   stroke:rgb(138, 137, 137);
-	   stroke-width: 1.5px;
-	   transition: all 1s ;
+	fill:white;
+	stroke:rgb(138, 137, 137);
+	stroke-width: 1.5px;
+	transition: all 0.3s ;
+	box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
+	margin-top:20px;
+    margin-left:80px;
+	border-radius: 90px;
+	border-style:dotted;
+	border-width: 1px;
+	
    }
-
-
+   .svg:hover{
+	box-shadow: 2px 30px 60px 10px rgb(202, 225, 248);
+   }
+   .inform{
+	   	position: absolute;
+		bottom:20px;
+		right:-40px;
+	   .final-text{
+		   margin-top:20px;
+		   color:rgb(83, 83, 83);
+		   font-weight:900;
+		   margin-bottom: 20px;
+		   background-color: white;
+		   padding:10px;
+		   border-radius: 40px 15px 50px 15px;
+		
+		border-width: 0.8px;
+		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+	   }
+	   .final{
+		box-sizing: border-box; 
+		background-color: white;
+		width:150px;
+		box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+		padding:20px;
+		border-radius: 40px 15px 50px 15px;
+		border:none;
+		
+		  h1{
+			font-weight:900;
+			}
+	   }
+	   .final:hover{
+		box-shadow:1px 1px 16px 5px rgb(164, 208, 255);
+	   }
+	   
+   }
+   .canvas{
+		   position:absolute;
+		   top:0px;
+		   left:80px;
+		   padding:10px;
+		   background-color: white;
+		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+			border-radius: 15px;
+			font-weight: 900;
+	   }
 </style>

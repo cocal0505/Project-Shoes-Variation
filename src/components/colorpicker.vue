@@ -62,5 +62,13 @@ export default {
 
 
 <style lang="scss">
+  .hu-color-picker.light{
+    border-radius: 15px;
+    margin-top:20px;
+    box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);
+  }
+  .hu-color-picker.light:hover{
+    box-shadow: 2px 2px 60px 10px rgb(202, 225, 248);
+  }
 
 </style>

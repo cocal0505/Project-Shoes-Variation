@@ -27,10 +27,13 @@ export default {
 <style lang="scss">
    .main-container{
        display: flex;
+       align-items: center;
        .sub-container{
            flex-basis: 100%;
            display: flex;
            flex-direction:column;
+           align-items: center;
+           position:relative;
        }
    }
 </style>
