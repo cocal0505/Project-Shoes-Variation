@@ -66,15 +66,56 @@ export default {
     border-radius: 15px;
     margin-top:20px;
     box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);
+    width:198px;
+    padding:10px;
+    z-index:1;
+    background-color:white;
 
     .color-set{
       display:flex;
     }
     .color-show{
       display: flex;
+      margin-top:8px;
+      height:30px;
     }
     .color-type{
       display:flex;
+      margin-top:8px;
+      font-size:12px;
+      .name{
+        width:60px;
+        height: 30px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        background: #e7e8e9;
+      }
+      .value{
+        flex: 1;
+        height: 30px;
+        min-width: 100px;
+        padding: 0 12px;
+        border: 0;
+        box-sizing: border-box;
+        
+      }
+    }
+    .colors{
+      .item{
+        position: relative;
+        width: 16px;
+        height: 16px;
+        margin: 10px 0 0 10px;
+        border-radius: 3px;
+        box-sizing: border-box;
+        vertical-align: top;
+        display: inline-block;
+        transition: all .1s;
+        cursor: pointer;
+      }
     }
   }
   .hu-color-picker.light:hover{
