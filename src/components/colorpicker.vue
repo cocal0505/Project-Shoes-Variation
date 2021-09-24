@@ -66,6 +66,16 @@ export default {
     border-radius: 15px;
     margin-top:20px;
     box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);
+
+    .color-set{
+      display:flex;
+    }
+    .color-show{
+      display: flex;
+    }
+    .color-type{
+      display:flex;
+    }
   }
   .hu-color-picker.light:hover{
     box-shadow: 2px 2px 60px 10px rgb(202, 225, 248);
