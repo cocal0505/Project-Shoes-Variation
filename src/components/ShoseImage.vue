@@ -517,7 +517,7 @@ export default {
 		   margin-bottom: 20px;
 		   background-color: white;
 		   padding:10px;
-		   border-radius: 40px 15px 50px 15px;
+		   border-radius: 15px;
 		
 		border-width: 0.8px;
 		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
@@ -528,7 +528,7 @@ export default {
 		width:150px;
 		box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
 		padding:20px;
-		border-radius: 40px 15px 50px 15px;
+		border-radius: 15px;
 		border:none;
 		
 		  h1{
