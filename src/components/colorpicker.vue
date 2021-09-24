@@ -104,6 +104,7 @@ export default {
       }
     }
     .colors{
+      display:none;
       .item{
         position: relative;
         width: 16px;
