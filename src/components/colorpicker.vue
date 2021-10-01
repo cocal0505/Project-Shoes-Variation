@@ -33,7 +33,7 @@ export default {
     methods: {
       changeColor(color) {
         const { r, g, b } = color.rgba
-        this.color = `rgba(${r}, ${g}, ${b}})`
+        this.color = `[${r}, ${g}, ${b}]`
         const rgb = this.color
         // this.$store.dispatch('Picking/color',{
         //   rgbcolor: rgb,

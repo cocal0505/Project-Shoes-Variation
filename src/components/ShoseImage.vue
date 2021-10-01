@@ -181,6 +181,7 @@ export default {
 				if(this.statusSt1){
 					this.color1 = this.colorstatus
 					this.colorRGB1	= this.colorRGB
+					console.log(this.colorRGB1)
 				}
 				const array = this.color1[0]
 				this.color1 = ""
@@ -459,16 +460,16 @@ export default {
 		},
 		submitfinal(){
 			this.$store.dispatch('Picking/finalRGBArray',{
-				st1Rgb : this.colorRGB1,
-				st2Rgb : this.colorRGB2,
-				st3Rgb : this.colorRGB3,
-				st4Rgb : this.colorRGB4,
-				st5Rgb : this.colorRGB5,
-				st6Rgb : this.colorRGB6,
-				st7Rgb : this.colorRGB7,
-				st8Rgb : this.colorRGB8,
-				st9Rgb : this.colorRGB9,
-				st10Rgb : this.colorRGB10,
+				st1Rgb : this.colorRGB1 === ""? this.colorRGB1.replace("","[-999,-999,-999]") : this.colorRGB1 ,
+				st2Rgb : this.colorRGB2 === ""? this.colorRGB2.replace("","[-999,-999,-999]") : this.colorRGB2 ,
+				st3Rgb : this.colorRGB3 === ""? this.colorRGB3.replace("","[-999,-999,-999]") : this.colorRGB3 ,
+				st4Rgb : this.colorRGB4 === ""? this.colorRGB4.replace("","[-999,-999,-999]") : this.colorRGB4 ,
+				st5Rgb : this.colorRGB5 === ""? this.colorRGB5.replace("","[-999,-999,-999]") : this.colorRGB5 ,
+				st6Rgb : this.colorRGB6 === ""? this.colorRGB6.replace("","[-999,-999,-999]") : this.colorRGB6 ,
+				st7Rgb : this.colorRGB7 === ""? this.colorRGB7.replace("","[-999,-999,-999]") : this.colorRGB7 ,
+				st8Rgb : this.colorRGB8 === ""? this.colorRGB8.replace("","[-999,-999,-999]") : this.colorRGB8 ,
+				st9Rgb : this.colorRGB9 === ""? this.colorRGB9.replace("","[-999,-999,-999]") : this.colorRGB9 ,
+				st10Rgb : this.colorRGB10 === ""? this.colorRGB10.replace("","[-999,-999,-999]") : this.colorRGB10 ,
 		
 			})
 		}
