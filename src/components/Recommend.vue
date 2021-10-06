@@ -26,23 +26,27 @@
             </div>
         </div>
 
+        <div class="color-box-container">
+            <h1> Color Palette</h1>
+            <div class="color-box">
+                <ColorPalette />
+            </div>
+        </div>
+
+
     </div>
+
+
+   
    
 </template>
 
+
 <script>
- 
+import ColorPalette from "./ColorPalette.vue"
 export default {
-    created(){
-    // const spawn = require('child_process').spawn
-    // const  array = [[255, 0, 0], [244, 247, 114], [252, 255, 248], [186, 205, 219], [-999, -999, -999], [244, 247, 114], [244, 247, 114], [186, 205, 219], [-999, -999, -999], [244, 247, 114], [-999, -999, -999]]
-    // const process1 = spawn('python', ['../../python/repeat.py',array]);
-    // const datafrompython = []
-    // process1.stdout.on('data',data=>{
-    //     // console.log(data.toString())
-    //     datafrompython.push(data.toString());
-    //     console.log("from python ",datafrompython)
-    //     })
+    components:{
+        ColorPalette
     },
    computed:{
        shoesStatus(){
@@ -92,9 +96,22 @@ export default {
     }
 
     .recommend{
-        height:450px;
- 
+        
     }
     
+    .color-box-container{
+        margin-top:150px;
+        h1{
+            margin-bottom:10px;
+            font-weight:900;
+        }
+        .color-box{
+            width:500px;
+            height:350px;
+            box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);;
+            border-radius: 15px;
+        
+        }
+    }
 
 </style>

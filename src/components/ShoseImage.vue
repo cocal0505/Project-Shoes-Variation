@@ -1,6 +1,6 @@
 <template>
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
+<div class="container">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
 		<path  :style="{fill:color2}"	 @click="changecolorst2" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
@@ -114,13 +114,20 @@
 </g>
 
 </svg>
-<div class="canvas">Canvas</div>
-<div class="inform">
-	<p class="final-text">need new color ideas?</p>
-	<button @click="submitfinal" class="final">
-		<h1>Bring Color palette</h1>
+	<div class="canvas">Canvas</div>
+	<div class="inform">
+		<p class="final-text">need new color ideas?</p>
+		<button @click="submitfinal" class="final">
+			<h1>Bring Color palette</h1>
+		</button>
+	</div>
+	<button 
+	@click="finalrgb"
+	class="submit-btn">
+		Finish and Submit
 	</button>
 </div>
+
 
 </template>
 
@@ -174,25 +181,32 @@ export default {
 			this.statusSt10=false,
 			this.statusSt1 = !this.statusSt1
 			const status1 = this.statusSt1
-			console.log(status1)
+			console.log("color1",status1)
 			
 			const app = document.querySelector('.color-set')
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt1){
 					this.color1 = this.colorstatus
-					this.colorRGB1	= this.colorRGB
-					console.log(this.colorRGB1)
+					this.colorRGB1= this.colorRGB
+					const array = this.color1[0]
+					
+					this.color1 = ""
+					this.color1 = array 
+				
 				}
-				const array = this.color1[0]
-				this.color1 = ""
-			
-				this.color1 = array 
-			
-			
 			})
+
+			const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt1){
+				this.color1 = this.PaletteColor
+				}
+			})
+				
+	
 			const rgbcolor1 = this.colorRGB1
-				this.$store.dispatch('Picking/status',status1)
-				this.$store.dispatch('Picking/RGBarray', rgbcolor1)
+			this.$store.dispatch('Picking/status',status1)
+			this.$store.dispatch('Picking/RGBarray', rgbcolor1)
 
 
 			
@@ -209,7 +223,7 @@ export default {
 			this.statusSt10=false,
 			this.statusSt2 = !this.statusSt2
 			const status2 = this.statusSt2
-			console.log(status2)
+			console.log("2",status2)
 			const app = document.querySelector('.color-set')
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt2){
@@ -221,6 +235,15 @@ export default {
 				this.color2 = array 
 			
         })
+
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt2){
+				this.color2 = this.PaletteColor
+				}
+			})
+		
+			
 				const rgbcolor2 = this.colorRGB2
 			this.$store.dispatch('Picking/status',status2)
 				this.$store.dispatch('Picking/RGBarray', rgbcolor2)
@@ -251,6 +274,17 @@ export default {
 	
 		});
 
+
+
+
+			const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt3){
+				this.color3 = this.PaletteColor
+				}
+			})
+
+
 			this.$store.dispatch('Picking/status',status3)
 			const rgbcolor3 = this.colorRGB3
 			this.$store.dispatch('Picking/RGBarray', rgbcolor3)
@@ -280,6 +314,16 @@ export default {
 				this.color4 = array 
 	
 		});
+
+
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt4){
+				this.color4 = this.PaletteColor
+				}
+			})
+
+
 			this.$store.dispatch('Picking/status',status4)
 			const rgbcolor4 = this.colorRGB4
 			this.$store.dispatch('Picking/RGBarray', rgbcolor4)
@@ -309,6 +353,17 @@ export default {
 				this.color5 = array 
 	
 		});
+
+
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt5){
+				this.color5 = this.PaletteColor
+				}
+			})
+
+
+
 			this.$store.dispatch('Picking/status',status5)
 			const rgbcolor5 = this.colorRGB5
 			this.$store.dispatch('Picking/RGBarray', rgbcolor5)
@@ -338,6 +393,17 @@ export default {
 				this.color6 = array 
 	
 		});
+		
+		
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt6){
+				this.color6 = this.PaletteColor
+				}
+			})
+
+
+
 			this.$store.dispatch('Picking/status',status6)
 			const rgbcolor6 = this.colorRGB6
 			this.$store.dispatch('Picking/RGBarray', rgbcolor6)
@@ -367,6 +433,17 @@ export default {
 				this.color7 = array 
 	
 		});
+
+
+
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt7){
+				this.color7 = this.PaletteColor
+				}
+			})
+
+
 			this.$store.dispatch('Picking/status',status7)
 			const rgbcolor7 = this.colorRGB7
 			this.$store.dispatch('Picking/RGBarray', rgbcolor7)
@@ -396,6 +473,14 @@ export default {
 				this.color8 = array 
 	
 		});
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt8){
+				this.color8 = this.PaletteColor
+				}
+			})
+
+
 			this.$store.dispatch('Picking/status',status8)
 			const rgbcolor8 = this.colorRGB8
 			this.$store.dispatch('Picking/RGBarray', rgbcolor8)
@@ -425,6 +510,15 @@ export default {
 				this.color9 = array 
 	
 		});
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt9){
+				this.color9 = this.PaletteColor
+				}
+			})
+
+
+
 			this.$store.dispatch('Picking/status',status9)
 			const rgbcolor9 = this.colorRGB9
 			this.$store.dispatch('Picking/RGBarray', rgbcolor9)
@@ -454,6 +548,12 @@ export default {
 				this.color10 = array 
 	
 		});
+		const app1 = document.querySelector('.Palette-container')
+			app1.addEventListener('click',()=>{
+				if(this.statusSt10){
+				this.color10 = this.PaletteColor
+				}
+			})
 			this.$store.dispatch('Picking/status',status10)
 			const rgbcolor10 = this.colorRGB10
 			this.$store.dispatch('Picking/RGBarray', rgbcolor10)
@@ -472,6 +572,7 @@ export default {
 				st10Rgb : this.colorRGB10 === ""? this.colorRGB10.replace("","[-999,-999,-999]") : this.colorRGB10 ,
 		
 			})
+			this.$store.dispatch('Picking/ReturnFromServer')
 		}
 		
     },
@@ -481,6 +582,9 @@ export default {
 		},
 		colorRGB(){
 			return this.$store.state.Picking.colorRGB
+		},
+		PaletteColor(){
+			return this.$store.state.Picking.currnetPaletteColor
 		}
 	
 	},
@@ -509,7 +613,7 @@ export default {
    }
    .inform{
 	   	position: absolute;
-		bottom:20px;
+		bottom:150px;
 		right:-40px;
 	   .final-text{
 		   margin-top:20px;
@@ -550,5 +654,19 @@ export default {
 		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
 			border-radius: 15px;
 			font-weight: 900;
+	   }
+
+	   .submit-btn{
+		   width:300px;
+		   margin-top:50px;
+		   background-color:white;
+		   height:80px;
+		   font-weight: 800;
+		   border:none;
+		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+		   border-radius: 15px;
+	   }
+	   .submit-btn:hover{
+		    box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
 	   }
 </style>

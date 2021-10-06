@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export default {
   
     namespaced: true,
@@ -7,7 +9,10 @@ export default {
         rgbArray : [],
         finalRgbArray : [],
         status : false,
-        final : []
+        serverstatus: false,
+        serverRGB : {},
+        serverRGBstatus :false,
+        currnetPaletteColor:""
     }),
     mutations:{
         colorstatus(state,payload){
@@ -27,14 +32,27 @@ export default {
               state.status = !state.status
           }
         },
-        finalRGB(state,payload){
-           
-         const final = Object.values(payload)
-            console.log(final)
-            state.final = final
-            // console.log(state.final)
+        sendedtoserver(state,payload){
+            if(payload){
+                state.serverstatus = true
+            }else{
+                state.serverstatus = false
+            }
+        },
+        serverRGB(state,payload){
+            state.serverRGB = payload
+            // console.log(state.serverRGB)
+            if(payload){
+                state.serverRGBstatus = true
+            }else{
+                state.serverRGBstatus = false
+            }
+        },
+        currnetPaletteColor(state,payload){
+            state.currnetPaletteColor = payload
+            console.log(state.currnetPaletteColor)
         }
-        
+       
     },
     actions:{
         color({commit},payload){
@@ -45,34 +63,64 @@ export default {
         RGBarray({commit},payload){
            commit('RGBarray',payload)
         },
-        finalRGBArray({commit},payload){
-        //    console.log(payload)
-            commit("finalRGB",payload)
+        async finalRGBArray({commit},payload){
+            const final = Object.values(payload)
+            console.log(final)
+            // await axios.post('api/bucketListItems/',final)
+            //     .then((res)=>{
+            //         console.log(res.data)
+            //     })
+            const status = true
+           commit('sendedtoserver',status)
+
         },
         status({commit},payload){
             if(payload || !payload){
                 commit('status',true)
             }
-        } 
+        },
+        async ReturnFromServer({state,commit}){
+
+            if(state.serverstatus){
+                const rgbarray =[[[227, 228, 232], [242, 215, 206], [249, 191, 167], [219, 139, 114], [216, 167, 106], [221, 221, 114]]]
+            
+                const newArray = [].concat(...rgbarray)
+                const newArray1 = [].concat(...newArray)
+
+                // // console.log(rgbarray)
+                // const newArray1 = newArray.map(arr=>{
+                //     return {
+                //         "colorRGB": arr
+                //     }
+                // })
+                
+                const newArray3 = []
+                for(let i=0;i<newArray1.length;i+=3){
+                    newArray3.push(newArray1.slice(i,i+3))
+                }     
+
+               const new1 = newArray3.map(arr=>{
+                    return `rgb(${String(arr)})`
+               })
+            //    console.log(new1)
+                commit('serverRGB',new1)
+            }
+        },
+        PaletteColor({commit},payload){
+            
+            commit("currnetPaletteColor",payload)
+        }
+        
     },
+
+
+
+  
+    
+  
 }
 
 
 
 
-// const spawn = require('child_process').spawn
-
-// // const  array = [[255, 0, 0], [244, 247, 114], [252, 255, 248], [186, 205, 219], [-999, -999, -999], [244, 247, 114], [244, 247, 114], [186, 205, 219], [-999, -999, -999], [244, 247, 114], [-999, -999, -999]]
-// const spawn = require('child_process').spawn
-// const process1 = spawn('python', ['./repeat.py',array]);
-
-
-// const datafrompython = []
-
-// process1.stdout.on('data',data=>{
-    
-//     // console.log(data.toString())
-//     datafrompython.push(data.toString());
-//     console.log("from python ",datafrompython)
-// })
 
