@@ -1,3 +1,4 @@
+import axios from "axios"
 
 export default {
   
@@ -37,6 +38,7 @@ export default {
             }else{
                 state.serverstatus = false
             }
+            console.log("serversended",state.serverstatus)
         },
         serverRGB(state,payload){
             state.serverRGB = payload
@@ -62,29 +64,106 @@ export default {
         RGBarray({commit},payload){
            commit('RGBarray',payload)
         },
-        async finalRGBArray({commit},payload){
-            const final = Object.values(payload)
-            console.log(final)
-            // await axios.post('api/bucketListItems/',final)
-            //     .then((res)=>{
-            //         console.log(res.data)
-            //     })
-            const status = true
-           commit('sendedtoserver',status)
 
+
+
+
+
+
+
+
+
+
+       async finalRGBArray({commit,state},payload){
+            const final = Object.values(payload)
+            // console.log(final)
+            const newArray =[].concat(...final)
+           
+            const newArray1 =  newArray.map((i)=>{
+                return Number(i)
+            })   
+            
+
+            const newArray2 = []
+                for(let i=0;i<newArray1.length;i+=3){
+                    newArray2.push(newArray1.slice(i,i+3))
+                }     
+            
+            console.log(newArray2)
+
+                function sendsever(){
+                    return new Promise((reslove,rej)=>{
+                        axios.post('http://localhost:3000/api/bucketListItems/',{
+                            array: newArray2
+                        })
+                            .then((res)=>{
+                                console.log(res.data)
+                                reslove(res)
+                                const status = true
+                                if(res.data){
+                                    commit('sendedtoserver',status)  
+                                }
+                            })
+                           
+                    })
+                }
+
+                function fetch(){
+                    
+                   return new Promise((reslove,rej)=>{
+                    if(state.serverstatus){
+                        setTimeout(()=>{
+                            axios.get('http://localhost:3000/api/frompython')
+                            .then((res)=>{
+                            console.log("client",res.data[0])
+                            reslove(res.data[0])
+                            })
+                        },5000)
+                        
+                    }else{
+                        console.log("did not recived")
+                        }
+                   })
+                }
+
+
+
+                await sendsever()
+                await fetch()
+                
+    
         },
         status({commit},payload){
             if(payload || !payload){
                 commit('status',true)
             }
         },
-        async ReturnFromServer({state,commit}){
 
-            if(state.serverstatus){
-                const rgbarray =[[[227, 228, 232], [242, 215, 206], [249, 191, 167], [219, 139, 114], [216, 167, 106], [221, 221, 114]]]
+
+
+
+
+
+
+
+
+
+
+       ReturnFromServer({state,commit}){
+
             
-                const newArray = [].concat(...rgbarray)
-                const newArray1 = [].concat(...newArray)
+            
+            
+      
+
+                // await axios.get('http://localhost:3000/api/bucketListItems/')
+                //  .then((res)=>{
+                //      console.log(res.data[0])
+                //  })
+                // const rgbarray =[[[227, 228, 232], [242, 215, 206], [249, 191, 167], [219, 139, 114], [216, 167, 106], [221, 221, 114]]]
+            
+                // const newArray = [].concat(...rgbarray)
+                // const newArray1 = [].concat(...newArray)
 
                 // // console.log(rgbarray)
                 // const newArray1 = newArray.map(arr=>{
@@ -93,17 +172,17 @@ export default {
                 //     }
                 // })
                 
-                const newArray3 = []
-                for(let i=0;i<newArray1.length;i+=3){
-                    newArray3.push(newArray1.slice(i,i+3))
-                }     
+            //     const newArray3 = []
+            //     for(let i=0;i<newArray1.length;i+=3){
+            //         newArray3.push(newArray1.slice(i,i+3))
+            //     }     
 
-               const new1 = newArray3.map(arr=>{
-                    return `rgb(${String(arr)})`
-               })
+            //    const new1 = newArray3.map(arr=>{
+            //         return `rgb(${String(arr)})`
+            //    })
             //    console.log(new1)
-                commit('serverRGB',new1)
-            }
+                // commit('serverRGB',new1)
+            
         },
         PaletteColor({commit},payload){
             
