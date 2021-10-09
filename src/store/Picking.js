@@ -91,9 +91,11 @@ export default {
             
             console.log(newArray2)
 
+
+          
                 function sendsever(){
                     return new Promise((reslove,rej)=>{
-                        axios.post('http://localhost:3000/api/bucketListItems/',{
+                        axios.post('https://shose-variation-2.herokuapp.com/api/bucketListItems',{
                             array: newArray2
                         })
                             .then((res)=>{
@@ -108,18 +110,52 @@ export default {
                     })
                 }
 
+                          
+
                 function fetch(){
                     
                    return new Promise((reslove,rej)=>{
                     if(state.serverstatus){
-                        setTimeout(()=>{
-                            axios.get('http://localhost:3000/api/frompython')
+                            setTimeout(() => {
+                                axios.get('https://shose-variation-2.herokuapp.com/api/frompython')
                             .then((res)=>{
                             console.log("client",res.data[0])
                             reslove(res.data[0])
+                            const pythonarray = res.data[0].array[0]
+
+                                console.log(pythonarray)
+                                let reg = /[`~!@#$%^&*()_|+\-=?;:'".<>\{\}\[\]\\\/ ]/gim;
+                                const newarray = pythonarray.replace(reg,"")
+                              
+                                    
+                                const newarray1 = newarray.split(',')
+                                console.log(newarray1)
+                                const newarray5 = newarray1.slice(3,undefined) 
+                                console.log(newarray5)
+                    
+                                const newArray3 = []
+                                    for(let i=0;i<newarray5.length;i+=3){
+                                        newArray3.push(newarray5.slice(i,i+3))
+                                    }     
+                              
+                    
+                    
+                                const new1 = newArray3.map(arr=>{
+                                            return `rgb(${String(arr)})`.replace('\n',"")
+                                       })
+                                      
+                    
+                                const new2 = new1.map(arr=>{
+                                    return arr.replace('\r',"")
+                                })
+                                console.log(new2)
+    
+                            commit('serverRGB',new2)
+
+
                             })
-                        },5000)
-                        
+                            }, 1000);
+
                     }else{
                         console.log("did not recived")
                         }
@@ -141,49 +177,6 @@ export default {
 
 
 
-
-
-
-
-
-
-
-
-       ReturnFromServer({state,commit}){
-
-            
-            
-            
-      
-
-                // await axios.get('http://localhost:3000/api/bucketListItems/')
-                //  .then((res)=>{
-                //      console.log(res.data[0])
-                //  })
-                // const rgbarray =[[[227, 228, 232], [242, 215, 206], [249, 191, 167], [219, 139, 114], [216, 167, 106], [221, 221, 114]]]
-            
-                // const newArray = [].concat(...rgbarray)
-                // const newArray1 = [].concat(...newArray)
-
-                // // console.log(rgbarray)
-                // const newArray1 = newArray.map(arr=>{
-                //     return {
-                //         "colorRGB": arr
-                //     }
-                // })
-                
-            //     const newArray3 = []
-            //     for(let i=0;i<newArray1.length;i+=3){
-            //         newArray3.push(newArray1.slice(i,i+3))
-            //     }     
-
-            //    const new1 = newArray3.map(arr=>{
-            //         return `rgb(${String(arr)})`
-            //    })
-            //    console.log(new1)
-                // commit('serverRGB',new1)
-            
-        },
         PaletteColor({commit},payload){
             
             commit("currnetPaletteColor",payload)

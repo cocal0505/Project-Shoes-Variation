@@ -575,7 +575,7 @@ export default {
 				st10Rgb : this.colorRGB10 === ""? this.colorRGB10.replace("","-999,-999,-999").split(',') : this.colorRGB10.split(',') ,
 		
 			})
-			this.$store.dispatch('Picking/ReturnFromServer')
+		
 		}
 		
     },
