@@ -10,9 +10,3 @@ createApp(App)
 
 
 
-//    const arrrya = [1,3,4,"",2]
-//    console.log(arrrya)
-//    const newarrya = arrrya.filter(i=>{
-//        return i 
-//    })
-//    console.log(newarrya)
