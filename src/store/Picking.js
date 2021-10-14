@@ -13,6 +13,7 @@ export default {
         serverRGB : {},
         serverRGBstatus :false,
         currnetPaletteColor:"",
+        color10:""
      
     }),
     mutations:{
@@ -54,6 +55,10 @@ export default {
             state.currnetPaletteColor = payload
             console.log(state.currnetPaletteColor)
         },
+        color10(state,payload){
+            state.color10 = payload
+            console.log(state.color10)
+        }
       
        
     },
@@ -186,7 +191,8 @@ export default {
         },
 
         colorfromserver10({commit},payload){
-            console.log(payload)
+       
+            commit("color10",payload)
         }
         
     },

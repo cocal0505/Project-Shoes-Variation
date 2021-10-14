@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container-shoes">
 <svg version="1.1" id="shose-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 500 400" style="enable-background:new 0 0 500 400;" xml:space="preserve">
 <g class="shose-layer">
@@ -144,7 +144,7 @@ export default {
         }
     },
     created(){
-        console.log("color",this.servercolor)
+       
     },
     methods:{
         areaclicked(color){
@@ -162,7 +162,7 @@ export default {
 
 
 <style scoped lang="scss">
-    .container{
+    .container-shoes{
        width:500px;
        height:400px;
          svg{
