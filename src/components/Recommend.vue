@@ -100,7 +100,7 @@ export default {
     }
     
     .color-box-container{
-        margin-top:150px;
+        margin-top:10px;
         h1{
             margin-bottom:10px;
             font-weight:900;
@@ -111,6 +111,29 @@ export default {
             box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);;
             border-radius: 15px;
         
+        }
+    }
+
+
+    @media screen and(max-width:500px) {
+        
+        .recommend{
+        
+        }
+    
+        .color-box-container{
+        margin-top:10px;
+            h1{
+                margin-bottom:10px;
+                font-weight:900;
+            }
+            .color-box{
+                width:375px;
+                height:500px;
+                box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);;
+                border-radius: 15px;
+            
+            }
         }
     }
 

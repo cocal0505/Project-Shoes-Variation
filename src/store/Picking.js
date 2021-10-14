@@ -12,7 +12,8 @@ export default {
         serverstatus: false,
         serverRGB : {},
         serverRGBstatus :false,
-        currnetPaletteColor:""
+        currnetPaletteColor:"",
+     
     }),
     mutations:{
         colorstatus(state,payload){
@@ -52,7 +53,8 @@ export default {
         currnetPaletteColor(state,payload){
             state.currnetPaletteColor = payload
             console.log(state.currnetPaletteColor)
-        }
+        },
+      
        
     },
     actions:{
@@ -91,7 +93,10 @@ export default {
             
             console.log(newArray2)
 
-
+            // const new3 =   ['rgb(66,122,146)', 'rgb(188,218,223)', 'rgb(69,111,97)', 'rgb(139,180,186)', 'rgb(66,122,146)', 'rgb(66,122,146)', 'rgb(139,180,186)', 'rgb(69,111,97)', 'rgb(69,111,97)', 'rgb(69,111,97)']
+     
+      
+          
           
                 function sendsever(){
                     return new Promise((reslove,rej)=>{
@@ -149,10 +154,8 @@ export default {
                                     return arr.replace('\r',"")
                                 })
                                 console.log(new2)
-    
-                            commit('serverRGB',new2)
-
-
+                                commit('serverRGB',new2)
+                        
                             })
                             }, 1000);
 
@@ -180,6 +183,10 @@ export default {
         PaletteColor({commit},payload){
             
             commit("currnetPaletteColor",payload)
+        },
+
+        colorfromserver10({commit},payload){
+            console.log(payload)
         }
         
     },

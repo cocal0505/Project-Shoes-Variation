@@ -598,38 +598,114 @@ export default {
 </script>
 
 <style lang="scss">
-   .svg{
-	fill:white;
-	stroke:rgb(138, 137, 137);
-	stroke-width: 1.5px;
-	transition: all 0.3s ;
-	box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
-	margin-top:20px;
-    margin-left:80px;
-	border-radius: 90px;
-	border-style:dotted;
-	border-width: 1px;
-	
-   }
-   .svg:hover{
-	box-shadow: 2px 30px 60px 10px rgb(202, 225, 248);
-   }
-   .inform{
-	   	position: absolute;
-		bottom:150px;
-		right:-40px;
-	   .final-text{
-		   margin-top:20px;
-		   color:rgb(83, 83, 83);
-		   font-weight:900;
-		   margin-bottom: 20px;
-		   background-color: white;
-		   padding:10px;
-		   border-radius: 15px;
-		
-		border-width: 0.8px;
-		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+  
+
+	   @media screen and (max-width:500px){
+
+
+
+		    .svg{
+				fill:white;
+				stroke:rgb(138, 137, 137);
+				stroke-width: 1.5px;
+				transition: all 0.3s ;
+				box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
+				margin-top:50px;
+				margin-bottom:10px;
+				border-radius: 60px;
+				
+				
+			}
+		    .inform{
+
+				position:relative;
+				
+					.final-text{
+						margin-top:20px;
+						color:rgb(83, 83, 83);
+						font-weight:900;
+						margin-bottom: 15px;
+						padding:5px;
+						border-radius: 15px;
+						border-width: 0.8px;
+					
+						font-size:15px;
+						width:150px;
+						margin-right:auto;
+						margin-left:auto;
+					}
+					.final{
+						box-sizing: border-box; 
+						background-color: white;
+						width:150px;
+						box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+						padding:20px;
+						border-radius: 15px;
+						border:none;
+					}
+						h1{
+							font-weight:900;
+							}
+				}
+			
+			.canvas{
+				position:absolute;
+				top:30px;
+				padding:10px;
+				background-color: white;
+		  		box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+				border-radius: 15px;
+				font-weight: 900;
+			 }
+			   .submit-btn{
+				width:100;
+				margin-top:20px;
+				background-color:white;
+				padding:20px;
+				font-weight: 800;
+				border:none;
+				box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+				border-radius: 15px;
+			}
 	   }
+
+
+	   @media screen and (min-width:500px){
+		    .svg{
+				fill:white;
+				stroke:rgb(138, 137, 137);
+				stroke-width: 1.5px;
+				transition: all 0.3s ;
+				box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
+				margin-top:20px;
+				margin-left:80px;
+				border-radius: 90px;
+				border-style:dotted;
+				border-width: 1px;
+				
+			}
+			.svg:hover{
+				box-shadow: 2px 30px 60px 10px rgb(202, 225, 248);
+			}
+
+
+
+		   .inform{
+			position: absolute;
+			bottom:150px;
+			right:-40px;
+			.final-text{
+				margin-top:20px;
+				color:rgb(83, 83, 83);
+				font-weight:900;
+				margin-bottom: 20px;
+				background-color: white;
+				padding:10px;
+				border-radius: 15px;
+				
+				border-width: 0.8px;
+				box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+			}
 	   .final{
 		box-sizing: border-box; 
 		background-color: white;
@@ -671,5 +747,7 @@ export default {
 	   }
 	   .submit-btn:hover{
 		    box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
+	   }
+
 	   }
 </style>

@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 import Shose from "../components/Shose.vue"
 import ColorPick from "../components/colorpicker.vue"
 import Recommend from "../components/Recommend.vue"
@@ -28,6 +29,7 @@ export default {
    .main-container{
        display: flex;
        align-items: center;
+    
        .sub-container{
            flex-basis: 100%;
            display: flex;
@@ -36,4 +38,11 @@ export default {
            position:relative;
        }
    }
+
+@media screen and(max-width:500px){
+    .main-container{
+        flex-wrap: wrap;
+    }
+}
+
 </style>
