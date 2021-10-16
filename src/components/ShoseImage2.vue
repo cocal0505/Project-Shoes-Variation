@@ -3,7 +3,7 @@
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
-		<path  :style="{fill:color2}"	 @click="changecolorst2" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
+		<path  :style="{fill:color2}"	@click="changecolorst2" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
 			c-3.1,1.5-28.5,11.3-27.3,23.5c1.2,12.2-0.4,19.6,10.3,23.4c0,0,2.9,4.7,24.5-6.9c0,0,3.2-2.8,4.5,1.3c1.3,4.1,5.8,13,9.5,13.5
 			c3.7,0.5,16.1,0,26.6-3.4c10.5-3.4,34.5-10.8,67.8-12.6c33.3-1.9,55.1-0.7,55.1-0.7l1.8-0.6l8.5,13.1c41.3,59.1,91.9,147,91.9,147
 			c28.9,70.2-26.9,86-26.9,86C956.3,827.8,891.3,816,891.3,816s-71.5-3.3-122.7-65.6c0,0-38.1-35.4-42-66.3
@@ -41,11 +41,11 @@
 			L1066.5,449.2z"/>
 	</g>
 	<g>
-		<path 	:style="{fill:color3}" @click="changecolorst3()" class="st3" d="M748.3,271.4c0,0,21.7,11.2,21,41.3c-0.7,30.2-1.6,54.2-8,56.9c0,0-5.7,4.5-12,5.9c-6.3,1.4-8.1,4.2-20.6-5
+		<path 	:style="{fill:color1}" @click="changecolorst1()" class="st1" d="M748.3,271.4c0,0,21.7,11.2,21,41.3c-0.7,30.2-1.6,54.2-8,56.9c0,0-5.7,4.5-12,5.9c-6.3,1.4-8.1,4.2-20.6-5
 			c-12.5-9.3-24.3-24.4-24.3-24.4v-85.3c0,0-2.6-15.7,14.4-34.8c17.1-19,40.7-30.2,95.8-22.3c55.1,7.9,76.1,49.9,76.1,49.9v74.1
 			c0,0,0,16.4-4.6,23c0,0-2.6,3.3-5.2,3.3l0.7-56.7c0,0,0.4-6.9-5.4-4.9l-4.4,1.1c0,0-7.9-18.2-17.8-26.1c0,0-14.4-15.7-38.7-21
 			c-24.3-5.2-59.1,0-59.1,0s-15.1,1.3-17.1,5.2c-2,3.9-6.6,5.2,2,13.8L748.3,271.4z"/>
-		<path  :style="{fill:color3}" @click="changecolorst3()" class="st3" d="M956.9,209c-0.1-0.1-0.2-0.2-0.2-0.3c-5.2-7.6,11.4-10.2,11.4-10.2c17.7-3.9,30.8,1.3,30.8,1.3
+		<path  :style="{fill:color1}" @click="changecolorst1()" class="st1" d="M956.9,209c-0.1-0.1-0.2-0.2-0.2-0.3c-5.2-7.6,11.4-10.2,11.4-10.2c17.7-3.9,30.8,1.3,30.8,1.3
 			c21,3.9,44.6,25.6,44.6,25.6l23.6,17.1c3.9-3.3,18.4-6.6,18.4-6.6s2-2.6,1.3-10.5c-0.7-7.9-17.7-23.6-17.7-23.6
 			s-19-18.4-42.7-28.9s-40-12.5-61-9.8c-21,2.6-34.1,20.3-34.1,20.3c-18.4,22.3-23.6,38.1-26.2,44.6c-2.6,6.6-4.6,28.2-4.6,28.2
 			s-2,12.5,5.2,27.6c7.2,15.1,49.9,48.6,57.1,51.2s15.1,0,15.1,0c14.4-4.6,23.6-34.8,23.6-34.8s6.6-19.7,7.2-36.7
@@ -100,25 +100,26 @@
 			c0,0-24-3.2-24.8,11.7C775.2,326.5,769.3,443.9,769.3,443.9z"/>
 	</g>
 	<g>
-		<path 	:style="{fill:color1}" @click="changecolorst1" class="st1" d="M968.3,577.3l66.5,106.7c0,0,22.6,33.6-54.9,46.7c-77.4,13.1-97.1,2-97.1,2s-57.7-25.6-93.2-72.2
+		<path 	:style="{fill:color7}" @click="changecolorst7" class="st7" d="M968.3,577.3l66.5,106.7c0,0,22.6,33.6-54.9,46.7c-77.4,13.1-97.1,2-97.1,2s-57.7-25.6-93.2-72.2
 			c-35.4-46.6,72.2-87.3,91.2-89.2C880.8,571.2,919.3,563.1,968.3,577.3z"/>
-		<path :style="{fill:color1}" @click="changecolorst1" class="st1" d="M1166.9,541.1c0,0-20.3-19.7-3.3-40.7c17.1-21,58.4-60.4,91.2-42c32.8,18.4,95.1,63.6,95.1,63.6
+		<path :style="{fill:color7}" @click="changecolorst7" class="st7" d="M1166.9,541.1c0,0-20.3-19.7-3.3-40.7c17.1-21,58.4-60.4,91.2-42c32.8,18.4,95.1,63.6,95.1,63.6
 			s24.3,26.9,13.1,48.6c-11.2,21.7-34.8,28.2-34.8,28.2s-37.4,9.8-86-8.5C1193.8,571.9,1166.9,541.1,1166.9,541.1z"/>
 	</g>
 	<g>
-		<path :style="{fill:color7}" @click="changecolorst7"  class="st7" d="M881.2,322.2v-5.9c0,0-31.5,4.6-75.5,5.2c0,0-8.9,1-8.9,10.8s0,17.7,0,17.7s1.3,9.2,5.2,9.8
+		<path :style="{fill:color3}" @click="changecolorst3"  class="st3" d="M881.2,322.2v-5.9c0,0-31.5,4.6-75.5,5.2c0,0-8.9,1-8.9,10.8s0,17.7,0,17.7s1.3,9.2,5.2,9.8
 			c3.9,0.7,25.6,3.3,38.7,0.7c0,0,21-2.6,34.1-9.8l5.2-2.6L881.2,322.2z"/>
-		<path :style="{fill:color7}" @click="changecolorst7"  class="st7" d="M1090.8,256.3c0,0,5.2,44-35.4,58.4c0,0-17.1-2-13.1-16.4c3.9-14.4,15.7-15.1,15.7-15.1s17.1-3.3,25.6-13.1
+		<path :style="{fill:color3}" @click="changecolorst3"  class="st3" d="M1090.8,256.3c0,0,5.2,44-35.4,58.4c0,0-17.1-2-13.1-16.4c3.9-14.4,15.7-15.1,15.7-15.1s17.1-3.3,25.6-13.1
 			c0,0,5.2-5.2,6.6-13.1C1090.2,256.9,1090.8,255.6,1090.8,256.3z"/>
 	</g>
 </g>
+
 
 </svg>
 	<div class="canvas">Canvas</div>
 	<div class="inform">
 		<p class="final-text">need new color ideas?</p>
 		<button @click="submitfinal" class="final">
-			<h1>Bring Color palette</h1>
+			<h1>Send color to server</h1>
 		</button>
 	</div>
 	<button 
@@ -542,12 +543,12 @@ export default {
 			const app = document.querySelector('.color-set')
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt10){
-					this.color10 = this.colorstatus
+					this.color11 = this.colorstatus
 					this.colorRGB10 = this.colorRGB
 				}
-				const array = this.color10[0]
-				this.color10 = ""
-				this.color10 = array 
+				const array = this.color11[0]
+				this.color11 = ""
+				this.color11 = array 
 	
 		});
 		const app1 = document.querySelector('.container-shoes')
@@ -576,6 +577,22 @@ export default {
 		
 			})
 		
+		},
+		finalrgb(){
+			this.$store.dispatch('Picking/truefinal',{
+				st0Rgb : this.dummy.split(','),
+				st1Rgb : this.colorRGB1 === ""? this.colorRGB1.replace("","-999,-999,-999").split(',') : this.colorRGB1.split(',') ,
+				st2Rgb : this.colorRGB2 === ""? this.colorRGB2.replace("","-999,-999,-999").split(',') : this.colorRGB2.split(',') ,
+				st3Rgb : this.colorRGB3 === ""? this.colorRGB3.replace("","-999,-999,-999").split(',') : this.colorRGB3.split(',') ,
+				st4Rgb : this.colorRGB4 === ""? this.colorRGB4.replace("","-999,-999,-999").split(',') : this.colorRGB4.split(',') ,
+				st5Rgb : this.colorRGB5 === ""? this.colorRGB5.replace("","-999,-999,-999").split(',') : this.colorRGB5.split(',') ,
+				st6Rgb : this.colorRGB6 === ""? this.colorRGB6.replace("","-999,-999,-999").split(',') : this.colorRGB6.split(',') ,
+				st7Rgb : this.colorRGB7 === ""? this.colorRGB7.replace("","-999,-999,-999").split(',') : this.colorRGB7.split(',') ,
+				st8Rgb : this.colorRGB8 === ""? this.colorRGB8.replace("","-999,-999,-999").split(',') : this.colorRGB8.split(',') ,
+				st9Rgb : this.colorRGB9 === ""? this.colorRGB9.replace("","-999,-999,-999").split(',') : this.colorRGB9.split(',') ,
+				st10Rgb : this.colorRGB10 === ""? this.colorRGB10.replace("","-999,-999,-999").split(',') : this.colorRGB10.split(',') ,
+		
+			})
 		}
 		
     },
@@ -606,7 +623,7 @@ export default {
 
 		    .svg{
 				fill:white;
-				stroke:rgb(138, 137, 137);
+				stroke:rgb(0, 0, 0);
 				stroke-width: 1.5px;
 				transition: all 0.3s ;
 				box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
@@ -673,7 +690,7 @@ export default {
 	   @media screen and (min-width:500px){
 		    .svg{
 				fill:white;
-				stroke:rgb(138, 137, 137);
+				stroke:rgb(8, 8, 8);
 				stroke-width: 1.5px;
 				transition: all 0.3s ;
 				box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);

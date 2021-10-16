@@ -1,5 +1,7 @@
 <template>
+
 <div class="container-shoes">
+<div class="btn" @click="Bringpalettecolor">Bring Color Palette</div>
 <svg version="1.1" id="shose-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 500 400" style="enable-background:new 0 0 500 400;" xml:space="preserve">
 <g class="shose-layer">
@@ -150,7 +152,10 @@ export default {
         areaclicked(color){
             // console.log(color)
             this.$store.dispatch('Picking/colorfromserver10', color)
-        }
+        },
+		 Bringpalettecolor(){
+           this.$store.dispatch("Picking/bringcolorpalette")
+       }
     },
     computed:{
         servercolor(){
@@ -162,6 +167,21 @@ export default {
 
 
 <style scoped lang="scss">
+	.btn{
+		margin-top:20px;
+		background-color:rgb(255, 255, 255);
+		width:100px;
+		margin-right:auto;
+		margin-left:auto;
+		z-index: 1;
+		box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+		border-radius:14px;
+		padding:10px;
+		font-weight: 700;
+	}
+	.btn:hover{
+		 box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
+	}
     .container-shoes{
        width:500px;
        height:400px;
@@ -174,7 +194,7 @@ export default {
 				.shose-layer{
                     .st0{
                       fill:white;
-                	    stroke:rgb(138, 137, 137);
+                	    stroke:rgb(0, 0, 0);
                       stroke-width:1;
                       stroke-miterlimit:10;  
                     }

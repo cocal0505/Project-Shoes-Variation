@@ -1,5 +1,8 @@
 <template>
+  
+
     <div class="main-container">
+    <Status v-if="this.status" />
     <Shose />
         <div class="sub-container">
         <ColorPick />
@@ -11,14 +14,28 @@
 
 <script>
 
+import Status from "../components/status.vue"
 import Shose from "../components/Shose.vue"
 import ColorPick from "../components/colorpicker.vue"
 import Recommend from "../components/Recommend.vue"
+
 export default {
+   
+    data(){
+        return{
+           stauts1:status
+        }
+    },
     components:{
         Shose,
         ColorPick,
-        Recommend
+        Recommend,
+        Status
+    },
+    computed:{
+        status(){
+            return this.$store.state.Picking.serverstatus
+        }
     }
 }
 </script>
@@ -26,6 +43,9 @@ export default {
 
 
 <style lang="scss">
+.status-container{
+    position:relative;
+}
    .main-container{
        display: flex;
        align-items: center;

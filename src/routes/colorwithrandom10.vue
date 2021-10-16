@@ -1,6 +1,7 @@
 <template>
 <h1>this is random ten</h1>
  <div class="main-container">
+    <Status v-if="this.status" />
     <Shose />
     <Statusbox />
         <div class="sub-container">
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import Status  from "../components/status.vue"
 import Shose from "../components/Shose2.vue"
 import ColorPick from "../components/colorpicker.vue"
 import Recommend2 from "../components/Recommend2.vue"
@@ -20,7 +22,13 @@ export default {
         Shose,
         ColorPick,
         Recommend2,
-        Statusbox
+        Statusbox,
+        Status
+    },
+     computed:{
+        status(){
+            return this.$store.state.Picking.serverstatus
+        }
     }
 }
 </script>

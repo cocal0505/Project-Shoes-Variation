@@ -66,7 +66,7 @@ export default {
   .hu-color-picker.light{
     border-radius: 15px;
     margin-top:20px;
-    box-shadow: 2px 2px 60px 10px rgb(226, 240, 255);
+    box-shadow: 2px 2px 20px 10px rgb(226, 240, 255);
     width:198px;
     padding:10px;
     z-index:1;
@@ -79,6 +79,9 @@ export default {
       display: flex;
       margin-top:8px;
       height:30px;
+      .sucker{
+        display:none;
+      }
     }
     .color-type{
       display:flex;
@@ -105,7 +108,6 @@ export default {
       }
     }
     .colors{
-      display:none;
       .item{
         position: relative;
         width: 16px;
@@ -121,7 +123,7 @@ export default {
     }
   }
   .hu-color-picker.light:hover{
-    box-shadow: 2px 2px 60px 10px rgb(202, 225, 248);
+    box-shadow: 2px 2px 20px 10px rgb(202, 225, 248);
   }
 
 </style>

@@ -27,6 +27,7 @@
         </div>
 
         <div class="color-box-container">
+            <button class="btn" @click="Bringpalettecolor">Bring Color Palette</button>
             <h1> Color Palette</h1>
             <div class="color-box">
                 <ColorPalette />
@@ -41,7 +42,6 @@
    
 </template>
 
-
 <script>
 import ColorPalette from "./ColorPalette.vue"
 export default {
@@ -52,12 +52,17 @@ export default {
        shoesStatus(){
         return this.$store.state.Picking.status
        },
+   }, 
+   methods:{
+       Bringpalettecolor(){
+           this.$store.dispatch("Picking/bringcolorpalette")
+       }
    }
 }
 </script>
 
 <style scoped lang="scss">
-
+    
 
     .box{
         
@@ -101,6 +106,23 @@ export default {
     
     .color-box-container{
         margin-top:10px;
+        .btn{
+             margin-top:20px;
+            background-color:rgb(255, 255, 255);
+            width:100px;
+            margin-right:auto;
+            margin-left:auto;
+            z-index: 1;
+            box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+            border-radius:14px;
+            padding:10px;
+            font-weight: 700;
+            border:none ;
+            margin-bottom: 10px;
+        }
+        .btn:hover{
+                 box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
+        }
         h1{
             margin-bottom:10px;
             font-weight:900;
@@ -122,7 +144,22 @@ export default {
         }
     
         .color-box-container{
-        margin-top:10px;
+            margin-top:10px;
+            .btn{
+                margin-top:20px;
+                background-color:rgb(255, 255, 255);
+                width:100px;
+                margin-right:auto;
+                margin-left:auto;
+                z-index: 1;
+                box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+                border-radius:14px;
+                padding:10px;
+                font-weight: 700;
+            }
+            .btn:hover{
+                 box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
+            }
             h1{
                 margin-bottom:10px;
                 font-weight:900;
