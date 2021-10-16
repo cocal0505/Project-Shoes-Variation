@@ -8,8 +8,9 @@
       :sucker-area="suckerArea"
       @changeColor="changeColor"
       @openSucker="openSucker"
-    />
-
+    >
+   </ColorPicker>
+  
    
 </template>
 
@@ -27,7 +28,8 @@ export default {
         suckerCanvas: null,
         suckerArea: [],
         isSucking: false,
-        colorsDefault : []
+        colorsDefault : [],
+        
       }
     },
     methods: {
@@ -56,6 +58,9 @@ export default {
           // this.suckerCanvas && this.suckerCanvas.remove
         }
       },
+      changeColor1(color1){
+        
+      }
     },
 }
 </script>
@@ -108,6 +113,7 @@ export default {
       }
     }
     .colors{
+      display:none;
       .item{
         position: relative;
         width: 16px;
@@ -125,5 +131,7 @@ export default {
   .hu-color-picker.light:hover{
     box-shadow: 2px 2px 20px 10px rgb(202, 225, 248);
   }
+   
+  
 
 </style>
