@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="150 30 1750 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg3">
 <g class="shose-layer">
 	<g>
 		<path  :style="{fill:color2}"	@click="changecolorst2" class="st2" d="M759.6,498.9c0,0,8.4-3.1,13.6-7.7c0,0,1.5-1.5,2.4,4.1c0.9,5.7,1.4,9.2,1.4,9.2s0.4,2-2.7,3.5
@@ -72,12 +72,12 @@
 	</g>
 
 	<g>
-		<path  :style="{fill:color11}" @click="changecolorst10" class="st10" d="M1067.2,782.8c0,0,3.3,11.5-5.9,25.3c-9.2,13.8-23,32.8-50.5,45.9c-27.6,13.1-49.9,14.4-49.9,14.4
+		<path  :style="{fill:color10}" @click="changecolorst10" class="st10" d="M1067.2,782.8c0,0,3.3,11.5-5.9,25.3c-9.2,13.8-23,32.8-50.5,45.9c-27.6,13.1-49.9,14.4-49.9,14.4
 			s-54.5,7.2-110.9-9.8c0,0-80.7-18.4-126-90.6c0,0-11.2-13.8-16.4-53.1c-5.2-39.4-26.9-81.4-26.9-81.4l-10.5-18.4
 			c0,0-6.6-11.8-5.2-21.7l0.7-6.6c0,0,17.8,34.5,18.8,37c0.9,2.4,13.5,27.3,13.5,27.3s12.7,37.7,14.5,49c0,0,17.8,57.5,24.6,64.6
 			c0,0,10.7,20.6,36,38.8c25.3,18.2,35.8,30.2,67.3,38.3s84,12.3,97.8,9.9c13.8-2.5,40-0.1,70.2-13.8c30.2-13.6,36.1-23,36.1-23
 			S1065.3,795,1067.2,782.8z"/>
-		<path  :style="{fill:color11}" @click="changecolorst10" class="st10"  d="M957.6,561.4l12.1,18c0,0,56.2,33.9,88.3,50.9c32.2,17.1,82.7,48.6,143.7,70.2c0,0,37.4,19.7,92.5,13.8
+		<path  :style="{fill:color10}" @click="changecolorst10" class="st10"  d="M957.6,561.4l12.1,18c0,0,56.2,33.9,88.3,50.9c32.2,17.1,82.7,48.6,143.7,70.2c0,0,37.4,19.7,92.5,13.8
 			c55.1-5.9,64.3-19,64.3-19s15.4-15.8,19.5-31.2c0,0-11.9,25.6-68.9,35.3c0,0-35.6,10-100.7-9.5c0,0-63.7-24.5-83.8-38.1
 			l-106.1-57.5L985,576.1L957.6,561.4z"/>
 	</g>
@@ -113,15 +113,8 @@
 	</g>
 </g>
 
-
 </svg>
 	<div class="canvas">Canvas</div>
-	<div class="inform">
-		<p class="final-text">need new color ideas?</p>
-		<button @click="submitfinal" class="final">
-			<h1>Send color to server</h1>
-		</button>
-	</div>
 	<button 
 	@click="finalrgb"
 	class="submit-btn">
@@ -153,7 +146,7 @@ export default {
 			colorRGB2:"",
 			color3:[],
 			colorRGB3:"",
-			color4:[],
+			color4:["rgb(241, 241, 241)"],
 			colorRGB4:"",
 			color5:[],
 			colorRGB5:"",
@@ -161,11 +154,11 @@ export default {
 			colorRGB6:"",
 			color7:["rgb(241, 241, 241)"],
 			colorRGB7:"",
-			color8:["rgb(241, 241, 241)"],
+			color8:[],
 			colorRGB8:"",
 			color9:[],
 			colorRGB9:"",
-			color11:[],
+			color10:[],
 			colorRGB10:"",
 
 		}
@@ -190,34 +183,20 @@ export default {
 				if(this.statusSt1){
 					this.color1 = this.colorstatus
 					this.colorRGB1= this.colorRGB
-					// console.log("from first",typeof(this.colorRGB1))
+				
 					const array = this.color1[0]
 					
 					this.color1 = ""
 					this.color1 = array 
-				
+
 				}
 			})
 
-			const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt1){
-				this.color1 = this.color10
-				const res = this.color1.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB1 = res2
-		
-				}
-			})
-				
 	
-			const rgbcolor1 = this.colorRGB1
 			this.$store.dispatch('Picking/status',status1)
-			this.$store.dispatch('Picking/RGBarray', rgbcolor1)
+		
 
 
-			
 		},
         changecolorst2(){
 			this.statusSt1=false,
@@ -236,6 +215,7 @@ export default {
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt2){
 					this.color2 = this.colorstatus
+					// console.log("this.color2",this.color2)
 					this.colorRGB2 = this.colorRGB
 				}
 				const array = this.color2[0]
@@ -244,21 +224,12 @@ export default {
 			
         })
 
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt2){
-				this.color2 = this.color10
-				const res = this.color2.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB2 = res2
-				}
-			})
+		
 		
 			
-				const rgbcolor2 = this.colorRGB2
+			
 			this.$store.dispatch('Picking/status',status2)
-				this.$store.dispatch('Picking/RGBarray', rgbcolor2)
+	
 		},
 		changecolorst3(){
 			this.statusSt1=false,
@@ -289,21 +260,8 @@ export default {
 
 
 
-			const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt3){
-				this.color3 = this.color10
-					const res = this.color3.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB3 = res2
-				}
-			})
-
-
 			this.$store.dispatch('Picking/status',status3)
-			const rgbcolor3 = this.colorRGB3
-			this.$store.dispatch('Picking/RGBarray', rgbcolor3)
+	
 		},
 			changecolorst4(){
 			this.statusSt1=false,
@@ -332,21 +290,10 @@ export default {
 		});
 
 
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt4){
-				this.color4 = this.color10
-					const res = this.color4.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB4 = res2
-				}
-			})
-
 
 			this.$store.dispatch('Picking/status',status4)
-			const rgbcolor4 = this.colorRGB4
-			this.$store.dispatch('Picking/RGBarray', rgbcolor4)
+		
+	
 		},
 			changecolorst5(){
 			this.statusSt1=false,
@@ -375,22 +322,13 @@ export default {
 		});
 
 
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt5){
-				this.color5 = this.color10
-					const res = this.color5.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB5 = res2
-				}
-			})
+	
 
 
 
 			this.$store.dispatch('Picking/status',status5)
-			const rgbcolor5 = this.colorRGB5
-			this.$store.dispatch('Picking/RGBarray', rgbcolor5)
+	
+
 		},
 			changecolorst6(){
 			this.statusSt1=false,
@@ -418,23 +356,9 @@ export default {
 	
 		});
 		
-		
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt6){
-				this.color6 = this.color10
-					const res = this.color6.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB6 = res2
-				}
-			})
-
-
 
 			this.$store.dispatch('Picking/status',status6)
-			const rgbcolor6 = this.colorRGB6
-			this.$store.dispatch('Picking/RGBarray', rgbcolor6)
+
 		},
 			changecolorst7(){
 			this.statusSt1=false,
@@ -462,23 +386,7 @@ export default {
 	
 		});
 
-
-
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt7){
-				this.color7 = this.color10
-					const res = this.color7.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB7 = res2
-				}
-			})
-
-
 			this.$store.dispatch('Picking/status',status7)
-			const rgbcolor7 = this.colorRGB7
-			this.$store.dispatch('Picking/RGBarray', rgbcolor7)
 		},
 			changecolorst8(){
 			this.statusSt1=false,
@@ -505,21 +413,10 @@ export default {
 				this.color8 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt8){
-				this.color8 = this.color10
-					const res = this.color8.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB8 = res2
-				}
-			})
-
+	
 
 			this.$store.dispatch('Picking/status',status8)
-			const rgbcolor8 = this.colorRGB8
-			this.$store.dispatch('Picking/RGBarray', rgbcolor8)
+
 		},
 			changecolorst9(){
 			this.statusSt1=false,
@@ -546,22 +443,11 @@ export default {
 				this.color9 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt9){
-				this.color9 = this.color10
-					const res = this.color9.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB9 = res2
-				}
-			})
-
+	
 
 
 			this.$store.dispatch('Picking/status',status9)
-			const rgbcolor9 = this.colorRGB9
-			this.$store.dispatch('Picking/RGBarray', rgbcolor9)
+
 		},
 			changecolorst10(){
 			this.statusSt1=false,
@@ -580,44 +466,18 @@ export default {
 			const app = document.querySelector('.color-set')
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt10){
-					this.color11 = this.colorstatus
+					this.color10 = this.colorstatus
 					this.colorRGB10 = this.colorRGB
 				}
-				const array = this.color11[0]
-				this.color11 = ""
-				this.color11 = array 
+				const array = this.color10[0]
+				this.color10 = ""
+				this.color10 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
-			app1.addEventListener('click',()=>{
-				if(this.statusSt10){
-				this.color11 = this.color10
-					const res = this.color11.replace("rgb","");
-            	const res1 = res.replace("(","")
-            	const res2 = res1.replace(")", "")
-				this.colorRGB10 = res2
-				}
-			})
+	
 			this.$store.dispatch('Picking/status',status10)
-			const rgbcolor10 = this.colorRGB10
-			this.$store.dispatch('Picking/RGBarray', rgbcolor10)
-		},
-		submitfinal(){
-			this.$store.dispatch('Picking/finalRGBArray',{
-				st0Rgb : this.dummy.split(','),
-				st1Rgb : this.colorRGB1 === ""? this.colorRGB1.replace("","-999,-999,-999").split(',') : this.colorRGB1.split(',') ,
-				st2Rgb : this.colorRGB2 === ""? this.colorRGB2.replace("","-999,-999,-999").split(',') : this.colorRGB2.split(',') ,
-				st3Rgb : this.colorRGB3 === ""? this.colorRGB3.replace("","-999,-999,-999").split(',') : this.colorRGB3.split(',') ,
-				st4Rgb : this.colorRGB4 === ""? this.colorRGB4.replace("","-999,-999,-999").split(',') : this.colorRGB4.split(',') ,
-				st5Rgb : this.colorRGB5 === ""? this.colorRGB5.replace("","-999,-999,-999").split(',') : this.colorRGB5.split(',') ,
-				st6Rgb : this.colorRGB6 === ""? this.colorRGB6.replace("","-999,-999,-999").split(',') : this.colorRGB6.split(',') ,
-				st7Rgb : this.colorRGB7 === ""? this.colorRGB7.replace("","-999,-999,-999").split(',') : this.colorRGB7.split(',') ,
-				st8Rgb : this.colorRGB8 === ""? this.colorRGB8.replace("","-999,-999,-999").split(',') : this.colorRGB8.split(',') ,
-				st9Rgb : this.colorRGB9 === ""? this.colorRGB9.replace("","-999,-999,-999").split(',') : this.colorRGB9.split(',') ,
-				st10Rgb : this.colorRGB10 === ""? this.colorRGB10.replace("","-999,-999,-999").split(',') : this.colorRGB10.split(',') ,
-		
-			})
-		
+
+
 		},
 		finalrgb(){
 			this.$store.dispatch('Picking/truefinal',{
@@ -635,7 +495,6 @@ export default {
 		
 			})
 		}
-		
     },
 	computed:{
 		colorstatus(){
@@ -644,8 +503,8 @@ export default {
 		colorRGB(){
 			return this.$store.state.Picking.colorRGB
 		},
-		color10(){
-			return this.$store.state.Picking.color10
+		PaletteColor(){
+			return this.$store.state.Picking.currnetPaletteColor
 		}
 	
 	},
@@ -655,7 +514,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   
 
 	   @media screen and (max-width:500px){
@@ -728,84 +587,56 @@ export default {
 	   }
 
 
-	   @media screen and (min-width:500px){
-		    .svg{
+@media screen and (min-width:500px){
+    .container{
+        padding: 0px 150px 0px 150px ;
+        box-sizing: border-box;
+             .svg3{
 				fill:white;
-				stroke:rgb(8, 8, 8);
+				stroke:rgb(2, 2, 2);
 				stroke-width: 1.5px;
 				transition: all 0.3s ;
 				box-shadow: 2px 30px 60px 10px rgb(226, 240, 255);
 				margin-top:20px;
-				margin-left:80px;
 				border-radius: 90px;
 				border-style:dotted;
 				border-width: 1px;
+             
 				
 			}
-			.svg:hover{
+			.svg3:hover{
 				box-shadow: 2px 30px 60px 10px rgb(202, 225, 248);
 			}
 
 
+		  
+            .canvas{
+                    position:absolute;
+                    top:30px;
+                    left:80px;
+                    padding:10px;
+                    background-color: white;
+                    box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+                        border-radius: 15px;
+                        font-weight: 900;
+                }
 
-		   .inform{
-			position: absolute;
-			bottom:150px;
-			right:-40px;
-			.final-text{
-				margin-top:20px;
-				color:rgb(83, 83, 83);
-				font-weight:900;
-				margin-bottom: 20px;
-				background-color: white;
-				padding:10px;
-				border-radius: 15px;
-				
-				border-width: 0.8px;
-				box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
-			}
-	   .final{
-		box-sizing: border-box; 
-		background-color: white;
-		width:150px;
-		box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
-		padding:20px;
-		border-radius: 15px;
-		border:none;
-		
-		  h1{
-			font-weight:900;
-			}
-	   }
-	   .final:hover{
-		box-shadow:1px 1px 16px 5px rgb(164, 208, 255);
-	   }
-	   
-   }
-   .canvas{
-		   position:absolute;
-		   top:0px;
-		   left:80px;
-		   padding:10px;
-		   background-color: white;
-		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
-			border-radius: 15px;
-			font-weight: 900;
-	   }
+                .submit-btn{
+                    width:300px;
+                    margin-top:50px;
+					margin-bottom: 10px;
+                    background-color:white;
+                    height:80px;
+                    font-weight: 800;
+                    border:none;
+                    box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
+                    border-radius: 15px;
+                }
+                .submit-btn:hover{
+                        box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
+                }
 
-	   .submit-btn{
-		   width:300px;
-		   margin-top:50px;
-		   background-color:white;
-		   height:80px;
-		   font-weight: 800;
-		   border:none;
-		   box-shadow:1px 1px 16px 5px rgb(226, 240, 255);
-		   border-radius: 15px;
-	   }
-	   .submit-btn:hover{
-		    box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
-	   }
-
-	   }
+    }
+		   
+}
 </style>

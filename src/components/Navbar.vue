@@ -2,15 +2,17 @@
     <div class="navbar-container">
         <div class="navbar">
              <div class="warper">
-            <RouterLink to="/" class="logo">PickAshoe</RouterLink>
-            <div class="router">  
-                <RouterLink to="/colorRten">ColorRten</RouterLink>
-                <h1>/</h1>
-                <RouterLink to="/colorten">Colorten</RouterLink>
+                <div class="router">  
+                    <RouterLink to="/">color Picker</RouterLink>
+                     <h1>/</h1>
+                    <RouterLink to="/colorPicker" class="logo">color Pallete</RouterLink>
+                    <h1>/</h1>
+                    <RouterLink to="/colorRten">color R shoe</RouterLink>
+                    <h1>/</h1>
+                    <RouterLink to="/colorten">color A shoe</RouterLink>
                 </div>
+            </div>
         </div>
-        </div>
-       
     </div>
 </template>
 
@@ -48,7 +50,6 @@ export default {
                 align-items: center;
                 width:100%;
                 box-sizing: border-box;
-                margin-right: 100px;
                 font-size:15px;
                 font-weight: 800;
                 h1{

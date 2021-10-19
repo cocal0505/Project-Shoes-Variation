@@ -1,5 +1,5 @@
 <template>
-
+    
    <ColorPicker
       theme="light"
       :color="color"
@@ -69,6 +69,9 @@ export default {
 
 <style  scoped lang="scss">
   .hu-color-picker.light{
+    position:absolute;
+    top:10px;
+    right:79px;
     border-radius: 15px;
     margin-top:20px;
     box-shadow: 2px 2px 20px 10px rgb(226, 240, 255);

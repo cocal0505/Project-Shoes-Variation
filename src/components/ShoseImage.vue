@@ -148,17 +148,17 @@ export default {
 			dummy:"0,0,0",
 			color1:[],
 			colorRGB1:"",
-			color2:[],
+			color2:["rgb(241, 241, 241)"],
 			colorRGB2:"",
 			color3:[],
 			colorRGB3:"",
-			color4:[],
+			color4:["rgb(241, 241, 241)"],
 			colorRGB4:"",
 			color5:[],
 			colorRGB5:"",
 			color6:[],
 			colorRGB6:"",
-			color7:[],
+			color7:["rgb(241, 241, 241)"],
 			colorRGB7:"",
 			color8:[],
 			colorRGB8:"",
@@ -189,29 +189,33 @@ export default {
 				if(this.statusSt1){
 					this.color1 = this.colorstatus
 					this.colorRGB1= this.colorRGB
-					// console.log("from first",typeof(this.colorRGB1))
+				
 					const array = this.color1[0]
 					
 					this.color1 = ""
 					this.color1 = array 
-				
+
 				}
 			})
-
+		
 			const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt1){
 				this.color1 = this.PaletteColor
+				const res = this.color1.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB1 = res2
 				}
-			})
 				
+			})
+			
 	
 			const rgbcolor1 = this.colorRGB1
 			this.$store.dispatch('Picking/status',status1)
 			this.$store.dispatch('Picking/RGBarray', rgbcolor1)
 
 
-			
 		},
         changecolorst2(){
 			this.statusSt1=false,
@@ -230,6 +234,7 @@ export default {
 			app.addEventListener("mouseup",()=>{
 				if(this.statusSt2){
 					this.color2 = this.colorstatus
+					// console.log("this.color2",this.color2)
 					this.colorRGB2 = this.colorRGB
 				}
 				const array = this.color2[0]
@@ -241,7 +246,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt2){
-				this.color2 = this.PaletteColor
+					this.color2 = this.PaletteColor
+				const res = this.color2.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB2 = res2
+		
 				}
 			})
 		
@@ -282,7 +292,12 @@ export default {
 			const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt3){
-				this.color3 = this.PaletteColor
+					this.color3 = this.PaletteColor
+				const res = this.color3.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB3 = res2
+		
 				}
 			})
 
@@ -322,6 +337,10 @@ export default {
 			app1.addEventListener('click',()=>{
 				if(this.statusSt4){
 				this.color4 = this.PaletteColor
+				const res = this.color4.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB4 = res2
 				}
 			})
 
@@ -360,7 +379,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt5){
-				this.color5 = this.PaletteColor
+					this.color5 = this.PaletteColor
+					const res = this.color5.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB5 = res2
+		
 				}
 			})
 
@@ -400,7 +424,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt6){
-				this.color6 = this.PaletteColor
+					this.color6 = this.PaletteColor
+					const res = this.color6.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB6 = res2
+		
 				}
 			})
 
@@ -441,7 +470,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt7){
-				this.color7 = this.PaletteColor
+					this.color7 = this.PaletteColor
+					const res = this.color7.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB7 = res2
+		
 				}
 			})
 
@@ -478,7 +512,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt8){
-				this.color8 = this.PaletteColor
+					this.color8 = this.PaletteColor
+					const res = this.color8.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB8 = res2
+		
 				}
 			})
 
@@ -515,7 +554,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt9){
-				this.color9 = this.PaletteColor
+					this.color9 = this.PaletteColor
+					const res = this.color9.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB9 = res2
+		
 				}
 			})
 
@@ -553,7 +597,12 @@ export default {
 		const app1 = document.querySelector('.Palette-container')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt10){
-				this.color10 = this.PaletteColor
+					this.color10 = this.PaletteColor
+					const res = this.color10.replace("rgb","");
+            	const res1 = res.replace("(","")
+            	const res2 = res1.replace(")", "")
+				this.colorRGB10 = res2
+		
 				}
 			})
 			this.$store.dispatch('Picking/status',status10)
