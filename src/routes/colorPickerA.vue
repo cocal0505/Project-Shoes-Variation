@@ -1,9 +1,7 @@
 <template>
     <div class="outer">
         <Shoseimage/>
-        <Colorpicker class="colorpick" >
-        </Colorpicker >
-        
+        <Colorpicker />
     </div>
 </template>
 
@@ -23,6 +21,5 @@ export default {
 <style scoped lang="scss">
 .outer{
     position:relative;
-   
 }
 </style>

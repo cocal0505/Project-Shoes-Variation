@@ -115,6 +115,7 @@ export default {
     .colors{
       display:none;
       .item{
+        display: none;
         position: relative;
         width: 16px;
         height: 16px;
@@ -128,6 +129,7 @@ export default {
       }
     }
   }
+  
   .hu-color-picker.light:hover{
     box-shadow: 2px 2px 20px 10px rgb(202, 225, 248);
   }
