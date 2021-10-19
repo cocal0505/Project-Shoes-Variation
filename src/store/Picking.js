@@ -96,7 +96,7 @@ export default {
                     newArray2.push(newArray1.slice(i,i+3))
                 }     
             
-            console.log(newArray2)
+            // console.log(newArray2)
 
             // const new3 =   ['rgb(66,122,146)', 'rgb(188,218,223)', 'rgb(69,111,97)', 'rgb(139,180,186)', 'rgb(66,122,146)', 'rgb(66,122,146)', 'rgb(139,180,186)', 'rgb(69,111,97)', 'rgb(69,111,97)', 'rgb(69,111,97)']
      
@@ -120,7 +120,7 @@ export default {
                     })
                 }
 
-                // await sendsever()
+                await sendsever()
             //   const status =true
             //   commit('sendedtoserver',status)  
     
