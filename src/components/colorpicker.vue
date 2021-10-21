@@ -1,5 +1,4 @@
 <template>
-
    <ColorPicker
       theme="light"
       :color="color"
@@ -10,8 +9,6 @@
       @openSucker="openSucker"
     >
    </ColorPicker>
-  
-   
 </template>
 
 
@@ -58,9 +55,6 @@ export default {
           // this.suckerCanvas && this.suckerCanvas.remove
         }
       },
-      changeColor1(color1){
-        
-      }
     },
 }
 </script>
@@ -113,7 +107,7 @@ export default {
       }
     }
     .colors{
-      display:none;
+      display: none;
       .item{
         display: none;
         position: relative;
