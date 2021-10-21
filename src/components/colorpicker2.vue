@@ -66,67 +66,67 @@ export default {
 
 
 
-<style  scoped lang="scss">
-// .colorpickercotainer{
-//      .hu-color-picker.light{
-//     position:absolute;
-//     top:10px;
-//     right:79px;
-//     border-radius: 15px;
-//     margin-top:20px;
-//     box-shadow: 2px 2px 20px 10px rgb(226, 240, 255);
-//     width:198px;
-//     padding:10px;
-//     z-index:1;
-//     background-color:white;
+<style   lang="scss">
+.colorpickercotainer{
+     .hu-color-picker.light{
+    position:absolute;
+    top:10px;
+    right:79px;
+    border-radius: 15px;
+    margin-top:20px;
+    box-shadow: 2px 2px 20px 10px rgb(226, 240, 255);
+    width:198px;
+    padding:10px;
+    z-index:1;
+    background-color:white;
 
-//     .color-set{
-//       display:flex;
-//     }
-//     .color-show{
-//       display: flex;
-//       margin-top:8px;
-//       height:30px;
-//       .sucker{
-//         display:none;
-//       }
-//     }
-//     .color-type{
-//       display:flex;
-//       margin-top:8px;
-//       font-size:12px;
-//       .name{
-//         width:60px;
-//         height: 30px;
-//         float: left;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         color: #999;
-//         background: #e7e8e9;
-//       }
-//       .value{
-//         flex: 1;
-//         height: 30px;
-//         min-width: 100px;
-//         padding: 0 12px;
-//         border: 0;
-//         box-sizing: border-box;
+    .color-set{
+      display:flex;
+    }
+    .color-show{
+      display: flex;
+      margin-top:8px;
+      height:30px;
+      .sucker{
+        display:none;
+      }
+    }
+    .color-type{
+      display:flex;
+      margin-top:8px;
+      font-size:12px;
+      .name{
+        width:60px;
+        height: 30px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        background: #e7e8e9;
+      }
+      .value{
+        flex: 1;
+        height: 30px;
+        min-width: 100px;
+        padding: 0 12px;
+        border: 0;
+        box-sizing: border-box;
         
-//       }
-//     }
-//     .colors{
-//       display:none;
+      }
+    }
+    .colors{
+      display:none;
       
-//     }
-//   }
+    }
+  }
 
 
-//   .hu-color-picker.light:hover{
-//     box-shadow: 2px 2px 20px 10px rgb(202, 225, 248);
-//   }
+  .hu-color-picker.light:hover{
+    box-shadow: 2px 2px 20px 10px rgb(202, 225, 248);
+  }
    
-// }
+}
  
   
 

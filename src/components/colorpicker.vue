@@ -61,7 +61,7 @@ export default {
 
 
 
-<style  scoped lang="scss">
+<style  lang="scss">
   .hu-color-picker.light{
     border-radius: 15px;
     margin-top:20px;

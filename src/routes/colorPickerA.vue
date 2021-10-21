@@ -1,7 +1,7 @@
 <template>
     <div class="outer">
         <Shoseimage/>
-        <!-- <Colorpicker /> -->
+        <Colorpicker />
     </div>
 </template>
 
