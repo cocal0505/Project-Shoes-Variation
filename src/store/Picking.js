@@ -9,7 +9,7 @@ export default {
         rgbArray : [],
         finalRgbArray : [],
         status : false,
-        serverstatus: true,
+        serverstatus: false,
         serverRGB : {},
         serverRGBstatus :false,
         currnetPaletteColor:"",
