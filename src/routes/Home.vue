@@ -4,6 +4,7 @@
     <div class="main-container">
     <Status v-if="this.status" />
     <Shose />
+    <Loader />
         <div class="sub-container">
         <ColorPick />
         <Recommend />
@@ -18,7 +19,7 @@ import Status from "../components/status.vue"
 import Shose from "../components/Shose.vue"
 import ColorPick from "../components/colorpicker.vue"
 import Recommend from "../components/Recommend.vue"
-
+import Loader from "../components/loader.vue"
 export default {
    
     data(){
@@ -30,7 +31,8 @@ export default {
         Shose,
         ColorPick,
         Recommend,
-        Status
+        Status,
+        Loader
     },
     computed:{
         status(){

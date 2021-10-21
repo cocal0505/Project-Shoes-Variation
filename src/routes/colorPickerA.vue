@@ -2,6 +2,7 @@
     <div class="outer">
         <Shoseimage/>
         <Colorpicker />
+       
     </div>
 </template>
 
@@ -9,6 +10,7 @@
 <script>
 import Shoseimage from "../components/ShoseImage3.vue"
 import Colorpicker from '../components/colorpicker2.vue'
+
 export default {
     components:{
         Shoseimage,

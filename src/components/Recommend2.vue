@@ -2,10 +2,10 @@
 
 <div class="container-shoes">
 <div class="btn" @click="Bringpalettecolor">Bring Color Palette</div>
+<Loader3 />
 <svg version="1.1" id="shose-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 500 400" style="enable-background:new 0 0 500 400;" xml:space="preserve">
 <g class="shose-layer">
-
 <g id="layer-1">
 	<path :style="{fill:this.servercolor[0]}" @click="areaclicked(this.servercolor[0])" class="st0" d="M121.79,71.85c0,0,10.89,5.61,10.56,20.8c-0.33,15.18-0.8,27.25-4.03,28.65c0,0-2.88,2.25-6.02,2.98
 		c-3.15,0.73-4.07,2.13-10.38-2.53s-12.25-12.25-12.25-12.25V66.57c0,0-1.32-7.92,7.26-17.5c8.58-9.57,20.47-15.18,48.19-11.22
@@ -129,6 +129,7 @@
 	<path  :style="{fill:this.servercolor[2]}" @click="areaclicked(this.servercolor[2])" class="st0" d="M294.1,64.25c0,0,2.64,22.12-17.83,29.38c0,0-8.58-0.99-6.6-8.25c1.98-7.26,7.92-7.59,7.92-7.59
 		s8.58-1.65,12.87-6.6c0,0,2.64-2.64,3.3-6.6C293.77,64.58,294.1,63.92,294.1,64.25z"/>
 </g>
+
 </g>
 </svg>
 
@@ -139,7 +140,11 @@
 
 
 <script>
+import Loader3 from "./loader3.vue"
 export default {
+	components:{
+		Loader3
+	},
     data(){
         return{
 
@@ -183,6 +188,7 @@ export default {
 		 box-shadow:1px 1px 16px 5px rgb(192, 208, 226);
 	}
     .container-shoes{
+		position:relative;
        width:500px;
        height:400px;
          svg{

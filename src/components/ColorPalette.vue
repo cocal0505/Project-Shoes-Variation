@@ -20,7 +20,9 @@
         <div 
         v-for="skeleton in skeletons"
         :key="skeleton"
-        class="color-skeleton"></div>
+        class="color-skeleton">
+            <Loader v-if="loaderstatus"/>
+        </div>
     </div>
 </div>
     
@@ -30,8 +32,11 @@
 
 
 <script>
-
+import Loader from "../components/loader2.vue"
 export default {
+    components:{
+        Loader
+    },
     data(){
         return{
             RGBColor:[],
@@ -44,6 +49,9 @@ export default {
         },
         status(){
             return this.$store.state.Picking.serverRGBstatus
+        },
+        loaderstatus(){
+            return this.$store.state.Picking.loader2
         }
     },
     watch:{
@@ -93,7 +101,7 @@ export default {
             }
     }
     .skeleton{
-             display: flex;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
@@ -107,7 +115,8 @@ export default {
         margin-right:10px;
         margin-left:10px;
         margin-top:20px;
-        margin-bottom:20px;    
+        margin-bottom:20px;
+        position:relative;    
     }
    
     }

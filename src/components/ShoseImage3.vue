@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+<Statusbox />
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="150 30 1750 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg3">
 <g class="shose-layer">
 	<g>
@@ -125,8 +126,13 @@
 
 </template>
 
+
 <script>
+import Statusbox from "../components/statusbox2.vue"
 export default {
+	components:{
+		Statusbox
+	},
 	data(){
 		return{
 			statusSt1:false,
@@ -591,6 +597,7 @@ export default {
     .container{
         padding: 0px 150px 0px 150px ;
         box-sizing: border-box;
+		position:relative;
              .svg3{
 				fill:white;
 				stroke:rgb(2, 2, 2);

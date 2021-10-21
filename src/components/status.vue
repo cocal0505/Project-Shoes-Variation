@@ -1,8 +1,8 @@
 <template>
     <div class="background"></div>
     <div class="status-box">
-        <h1> sended successfully</h1>
-        <button @click="closepopup">ok</button>
+        <h1> Sended Successfully</h1>
+        <button class="okbtn" @click="closepopup">ok</button>
     </div>
 </template>
 
@@ -28,14 +28,21 @@ export default {
         width:100px;
         height:50px;
         margin:auto;
-        padding:10px;
+        padding:40px;
         border-radius: 15px;
         box-shadow: 1px 1px 10px rgb(196, 196, 196);
         background-color:white;
         z-index: 3;
+        .okbtn{
+            margin-top:10px;
+            width:100px;
+            border-radius: 15px;
+            border: solid 1px rgb(119, 119, 119);
+
+        }
     }
     .background{
-        position:absolute;
+       position:absolute;
        width:100%;
        height:100vh;
        background-color:rgba(0, 0, 0, 0.26);

@@ -9,11 +9,13 @@ export default {
         rgbArray : [],
         finalRgbArray : [],
         status : false,
-        serverstatus: false,
+        serverstatus: true,
         serverRGB : {},
         serverRGBstatus :false,
         currnetPaletteColor:"",
-        color10:""
+        color10:"",
+        loader : false,
+        loader2 : false 
      
     }),
     mutations:{
@@ -58,9 +60,22 @@ export default {
         color10(state,payload){
             state.color10 = payload
             console.log(state.color10)
+        },
+        loaderstatus(state,payload){
+            if(payload === true){
+                state.loader = true
+            }else if(payload === false){
+                state.loader = false
+            }
+        },
+        bringloader(state,payload){
+            if(payload === true){
+                state.loader2 = true
+            }else if(payload === false){
+                state.loader2 = false
+            }
         }
       
-       
     },
     actions:{
         color({commit},payload){
@@ -74,14 +89,12 @@ export default {
 
 
 
-
-
-
-
-
-
-
        async finalRGBArray({commit,state},payload){
+           
+            const loaderstatus =true
+            commit("loaderstatus",loaderstatus)
+
+
             const final = Object.values(payload)
             // console.log(final)
             const newArray =[].concat(...final)
@@ -100,8 +113,16 @@ export default {
 
             // const new3 =   ['rgb(66,122,146)', 'rgb(188,218,223)', 'rgb(69,111,97)', 'rgb(139,180,186)', 'rgb(66,122,146)', 'rgb(66,122,146)', 'rgb(139,180,186)', 'rgb(69,111,97)', 'rgb(69,111,97)', 'rgb(69,111,97)']
      
-      
-          
+
+            // function status(){
+            //     setTimeout(() => {
+            //         const loaderstatus1 = false
+            //         commit("loaderstatus",loaderstatus1)
+            //         console.log("hello")
+            //     }, 3000);
+            // }
+           
+            // await status()
           
                 function sendsever(){
                     return new Promise((reslove,rej)=>{
@@ -115,6 +136,9 @@ export default {
                                 if(res.data){
                                     commit('sendedtoserver',status)  
                                 }
+                            }).finally(()=>{
+                                const loaderstatus1 = false
+                                commit("loaderstatus",loaderstatus1)
                             })
                            
                     })
@@ -147,45 +171,54 @@ export default {
         },
 
         async  bringcolorpalette({commit},payload){
+            const bringloaderstatus = true
+            commit("bringloader",bringloaderstatus)
+
             function fetch(){
                     
                 return new Promise((reslove,rej)=>{
+                    setTimeout(() => {
                         axios.get('https://shose-variation-2.herokuapp.com/api/frompython')
-                         .then((res)=>{
-                         console.log("client",res.data[0])
-                         reslove(res.data[0])
-                         const pythonarray = res.data[0].array[0]
+                        .then((res)=>{
+                        console.log("client",res.data[0])
+                        reslove(res.data[0])
+                        const pythonarray = res.data[0].array[0]
 
-                            //  console.log(pythonarray)
-                             let reg = /[`~!@#$%^&*()_|+\-=?;:'".<>\{\}\[\]\\\/ ]/gim;
-                             const newarray = pythonarray.replace(reg,"")
-                           
-                                 
-                             const newarray1 = newarray.split(',')
-                            //  console.log(newarray1)
-                             const newarray5 = newarray1.slice(3,undefined) 
-                            //  console.log(newarray5)
-                 
-                             const newArray3 = []
-                                 for(let i=0;i<newarray5.length;i+=3){
-                                     newArray3.push(newarray5.slice(i,i+3))
-                                 }     
-                           
-                 
-                 
-                             const new1 = newArray3.map(arr=>{
-                                         return `rgb(${String(arr)})`.replace('\n',"")
-                                    })
-                                   
-                 
-                             const new2 = new1.map(arr=>{
-                                 return arr.replace('\r',"")
-                             })
-                            //  console.log(new2)
-                             commit('serverRGB',new2)
-                     
-                         })
-                })                
+                           //  console.log(pythonarray)
+                            let reg = /[`~!@#$%^&*()_|+\-=?;:'".<>\{\}\[\]\\\/ ]/gim;
+                            const newarray = pythonarray.replace(reg,"")
+                          
+                                
+                            const newarray1 = newarray.split(',')
+                           //  console.log(newarray1)
+                            const newarray5 = newarray1.slice(3,undefined) 
+                           //  console.log(newarray5)
+                
+                            const newArray3 = []
+                                for(let i=0;i<newarray5.length;i+=3){
+                                    newArray3.push(newarray5.slice(i,i+3))
+                                }     
+                          
+                
+                
+                            const new1 = newArray3.map(arr=>{
+                                        return `rgb(${String(arr)})`.replace('\n',"")
+                                   })
+                                  
+                
+                            const new2 = new1.map(arr=>{
+                                return arr.replace('\r',"")
+                            })
+
+                            commit('serverRGB',new2)
+                    
+                        }).finally(()=>{
+                           const bringloaderstatus1 = false
+                           commit("bringloader",bringloaderstatus1)
+                        })
+                    }, 5000);
+                       
+                    })                
              }
 
              await fetch()
