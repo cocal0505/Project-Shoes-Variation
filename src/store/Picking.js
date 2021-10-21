@@ -15,8 +15,7 @@ export default {
         currnetPaletteColor:"",
         color10:"",
         loader : false,
-        loader2 : false 
-     
+        loader2 : false ,
     }),
     mutations:{
         colorstatus(state,payload){
@@ -74,8 +73,11 @@ export default {
             }else if(payload === false){
                 state.loader2 = false
             }
+        },
+        reset(state){
+            state.serverRGB = {},
+            state.serverRGBstatus = false
         }
-      
     },
     actions:{
         color({commit},payload){
@@ -208,15 +210,16 @@ export default {
                 
                             const new2 = new1.map(arr=>{
                                 return arr.replace('\r',"")
+                                
                             })
-
+                            console.log(new2)
                             commit('serverRGB',new2)
                     
                         }).finally(()=>{
                            const bringloaderstatus1 = false
                            commit("bringloader",bringloaderstatus1)
                         })
-                    }, 5000);
+                    }, 0);
                        
                     })                
              }
@@ -259,7 +262,7 @@ export default {
             }
 
             await sendsever1()
-        }
+        },
         
     },
 

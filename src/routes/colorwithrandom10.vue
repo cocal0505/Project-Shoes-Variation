@@ -1,5 +1,4 @@
 <template>
-<h1>this is random ten</h1>
  <div class="main-container">
     <Status v-if="this.status" />
     <Shose />
@@ -31,8 +30,13 @@ export default {
      computed:{
         status(){
             return this.$store.state.Picking.serverstatus
-        }
+        },
+        
+    },
+    created(){
+        this.$store.commit('Picking/reset')
     }
+ 
 }
 </script>
 

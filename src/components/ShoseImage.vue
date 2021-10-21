@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container-1">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
@@ -148,17 +148,17 @@ export default {
 			dummy:"0,0,0",
 			color1:[],
 			colorRGB1:"",
-			color2:["rgb(241, 241, 241)"],
+			color2:["rgb(160, 160, 160)"],
 			colorRGB2:"",
 			color3:[],
 			colorRGB3:"",
-			color4:["rgb(241, 241, 241)"],
+			color4:["rgb(160, 160, 160)"],
 			colorRGB4:"",
 			color5:[],
 			colorRGB5:"",
 			color6:[],
 			colorRGB6:"",
-			color7:["rgb(241, 241, 241)"],
+			color7:["rgb(160, 160, 160)"],
 			colorRGB7:"",
 			color8:[],
 			colorRGB8:"",

@@ -3,13 +3,13 @@
         <div class="navbar">
              <div class="warper">
                 <div class="router">  
-                    <RouterLink to="/">color Picker</RouterLink>
+                    <RouterLink :style="{backgroundColor:color}" @click="btnclick"  class="router-btn" to="/">color Picker</RouterLink>
                      <h1>/</h1>
-                    <RouterLink to="/colorPicker" class="logo">color Pallete</RouterLink>
+                    <RouterLink :style="{backgroundColor:color1}" @click="btnclick1" to="/colorPicker" class="router-btn">color Pallete</RouterLink>
                     <h1>/</h1>
-                    <RouterLink to="/colorRten">color R shoe</RouterLink>
+                    <RouterLink :style="{backgroundColor:color2}" @click="btnclick2" class="router-btn" to="/colorRten">color R shoe</RouterLink>
                     <h1>/</h1>
-                    <RouterLink to="/colorten">color A shoe</RouterLink>
+                    <RouterLink :style="{backgroundColor:color3}" @click="btnclick3" class="router-btn" to="/colorten">color A shoe</RouterLink>
                 </div>
             </div>
         </div>
@@ -18,8 +18,48 @@
 
 
 <script>
+
 export default {
-    
+    data(){
+        return{
+            color: "",
+            color1: "",
+            color2:"",
+            color3 :""
+        }
+    },
+    watch:{
+        btnclick1(){
+
+        }
+    },
+    methods:{
+        btnclick(){
+            this.color1 = ""
+            this.color2= ""
+            this.color3=""
+            this.color = "rgb(191, 224, 247)"
+            // this.$store.commit("Picking/navcolor",string)
+        },
+        btnclick1(){
+            this.color = ""
+            this.color2 =""
+            this.coloe3 =""
+            this.color1 ="rgb(191, 224, 247)"
+        },
+        btnclick2(){
+            this.color2 = "rgb(191, 224, 247)"
+            this.color = ""
+            this.color1 = ""
+            this.color3 =""
+        },
+        btnclick3(){
+            this.color3 ="rgb(191, 224, 247)"
+            this.color2 = ""
+            this.color1 =""
+            this.color =""
+        }
+     },
 }
 </script>
 
@@ -40,10 +80,6 @@ export default {
         justify-content: flex-start;
         align-items: center;
         height:50px;
-            .logo{
-
-             font-weight: 800;
-            }
             .router{
                 display:flex;
                 justify-content: center;
@@ -54,6 +90,15 @@ export default {
                 font-weight: 800;
                 h1{
                     margin: 0 10px 0px 10px; 
+                    
+                }
+                .router-btn{
+                    padding:10px;
+                    border-radius:5px;
+                    transition: all .5s;
+                }
+                .router-btn:hover{
+                    background-color:rgb(220, 241, 255);
                     
                 }
             }

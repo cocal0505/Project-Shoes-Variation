@@ -38,7 +38,9 @@ export default {
         status(){
             return this.$store.state.Picking.serverstatus
         }
-    }
+    },
+      
+    
 }
 </script>
 

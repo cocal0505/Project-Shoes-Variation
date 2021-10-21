@@ -9,6 +9,7 @@
             :key="color">
                 <div class="color-ball" @click="pickpalette(color)"
                 :style="{backgroundColor:color}">
+                    <Loader v-if="loaderstatus"/>
                 </div>
         </div>
     </div>  

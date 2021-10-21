@@ -29,10 +29,8 @@ export default {
 
 .loader-container{
 position:absolute;
-width:100%;
-top:250px;
-bottom:0px;
-margin:auto;
+top:170px;
+left:200px;
 .lds-roller {
   display: inline-block;
   position: relative;

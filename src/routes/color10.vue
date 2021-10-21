@@ -1,5 +1,4 @@
 <template>
- <h1>this is colorten</h1>
  <div class="main-container">
     <Status v-if="this.status" />
     <Shose />
@@ -32,6 +31,8 @@ export default {
         status(){
             return this.$store.state.Picking.serverstatus
         }
+    }, created(){
+        this.$store.commit('Picking/reset')
     }
 }
 </script>

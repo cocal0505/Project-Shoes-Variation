@@ -15,6 +15,9 @@ export default {
     components:{
         Shoseimage,
         Colorpicker,
+    },
+      created(){
+        this.$store.commit('Picking/reset')
     }
 }
 </script>

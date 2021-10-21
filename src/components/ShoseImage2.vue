@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container-2">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="355 70 1400 1000" style="enable-background:new 0 0 1920 1080;" xml:space="preserve" class="svg">
 <g class="shose-layer">
 	<g>
@@ -149,19 +149,19 @@ export default {
 			dummy:"0,0,0",
 			color1:[],
 			colorRGB1:"",
-			color2:["rgb(241, 241, 241)"],
+			color2:["rgb(160, 160, 160)"],
 			colorRGB2:"",
 			color3:[],
 			colorRGB3:"",
-			color4:[],
+			color4:["rgb(160, 160, 160)"],
 			colorRGB4:"",
 			color5:[],
 			colorRGB5:"",
 			color6:[],
 			colorRGB6:"",
-			color7:["rgb(241, 241, 241)"],
+			color7:["rgb(160, 160, 160)"],
 			colorRGB7:"",
-			color8:["rgb(241, 241, 241)"],
+			color8:[],
 			colorRGB8:"",
 			color9:[],
 			colorRGB9:"",
@@ -210,8 +210,7 @@ export default {
 		
 				}
 			})
-				
-	
+
 			const rgbcolor1 = this.colorRGB1
 			this.$store.dispatch('Picking/status',status1)
 			this.$store.dispatch('Picking/RGBarray', rgbcolor1)
