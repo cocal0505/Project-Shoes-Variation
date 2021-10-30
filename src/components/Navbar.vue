@@ -3,13 +3,13 @@
         <div class="navbar">
              <div class="warper">
                 <div class="router">  
-                    <RouterLink :style="{backgroundColor:color}" @click="btnclick"  class="router-btn" to="/">color Picker</RouterLink>
+                    <RouterLink :style="{backgroundColor:color}" @click="btnclick"  class="router-btn" to="/">A</RouterLink>
                      <h1>/</h1>
-                    <RouterLink :style="{backgroundColor:color1}" @click="btnclick1" to="/colorPicker" class="router-btn">color Pallete</RouterLink>
+                    <RouterLink :style="{backgroundColor:color1}" @click="btnclick1" to="/colorPicker" class="router-btn">B</RouterLink>
                     <h1>/</h1>
-                    <RouterLink :style="{backgroundColor:color2}" @click="btnclick2" class="router-btn" to="/colorRten">color R shoe</RouterLink>
+                    <RouterLink :style="{backgroundColor:color2}" @click="btnclick2" class="router-btn" to="/colorRten">C</RouterLink>
                     <h1>/</h1>
-                    <RouterLink :style="{backgroundColor:color3}" @click="btnclick3" class="router-btn" to="/colorten">color A shoe</RouterLink>
+                    <RouterLink :style="{backgroundColor:color3}" @click="btnclick3" class="router-btn" to="/colorten">D</RouterLink>
                 </div>
             </div>
         </div>

@@ -73,6 +73,9 @@ export default {
         pickpalette(color){
              this.$store.dispatch("Picking/PaletteColor",color)
         }
+    },
+    created(){
+        this.$store.commit('Picking/reset')
     }
 }
 </script>

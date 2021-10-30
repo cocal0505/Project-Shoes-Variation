@@ -199,9 +199,10 @@ export default {
 				}
 			})
 
-			const app1 = document.querySelector('.container-shoes')
+			const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt1){
+					
 				this.color1 = this.color10
 				const res = this.color1.replace("rgb","");
             	const res1 = res.replace("(","")
@@ -243,7 +244,7 @@ export default {
 			
         })
 
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt2){
 				this.color2 = this.color10
@@ -288,7 +289,7 @@ export default {
 
 
 
-			const app1 = document.querySelector('.container-shoes')
+			const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt3){
 				this.color3 = this.color10
@@ -331,7 +332,7 @@ export default {
 		});
 
 
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt4){
 				this.color4 = this.color10
@@ -374,7 +375,7 @@ export default {
 		});
 
 
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt5){
 				this.color5 = this.color10
@@ -418,7 +419,7 @@ export default {
 		});
 		
 		
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt6){
 				this.color6 = this.color10
@@ -463,11 +464,11 @@ export default {
 
 
 
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt7){
 				this.color7 = this.color10
-					const res = this.color7.replace("rgb","");
+				const res = this.color7.replace("rgb","");
             	const res1 = res.replace("(","")
             	const res2 = res1.replace(")", "")
 				this.colorRGB7 = res2
@@ -504,7 +505,7 @@ export default {
 				this.color8 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt8){
 				this.color8 = this.color10
@@ -545,7 +546,7 @@ export default {
 				this.color9 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt9){
 				this.color9 = this.color10
@@ -587,7 +588,7 @@ export default {
 				this.color11 = array 
 	
 		});
-		const app1 = document.querySelector('.container-shoes')
+		const app1 = document.querySelector('.container-shoes-2')
 			app1.addEventListener('click',()=>{
 				if(this.statusSt10){
 				this.color11 = this.color10
